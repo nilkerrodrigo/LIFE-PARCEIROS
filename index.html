@@ -25,10 +25,15 @@
             },
             animation: {
               shimmer: 'shimmer 1.5s infinite',
+              'text-shine': 'textShine 3s linear infinite',
             },
             keyframes: {
               shimmer: {
                 '100%': { transform: 'translateX(100%)' },
+              },
+              textShine: {
+                '0%': { backgroundPosition: '0% 50%' },
+                '100%': { backgroundPosition: '200% 50%' },
               }
             }
           }
@@ -50,8 +55,9 @@
         height: 100vh;
         pointer-events: none;
         z-index: 50;
-        opacity: 0.07;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+        opacity: 0.05; /* Adjusted opacity for animated GIF */
+        background-image: url("http://life360parceiros.com.br/wp-content/uploads/2026/02/ruido-animado-1.gif");
+        background-repeat: repeat;
       }
 
       /* Custom scrollbar for sleek look */
@@ -68,6 +74,119 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #D4AF37;
       }
+
+      /* Luxury Gold Button Styling */
+      .btn-luxury {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(30,30,30,0.8) 0%, rgba(0,0,0,0.9) 100%);
+        /* Border is handled by the walking anim now, but we keep a subtle static one for fallback/depth */
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+      }
+
+      /* Dotted texture overlay */
+      .btn-luxury::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 50%;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 4px 4px;
+        opacity: 0.5;
+        mask-image: linear-gradient(to right, transparent, black);
+        -webkit-mask-image: linear-gradient(to right, transparent, black);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* Top highlight sheen (Glass effect) */
+      .btn-luxury::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      .btn-luxury:hover {
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.3), inset 0 0 10px rgba(212, 175, 55, 0.1);
+        text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+        transform: translateY(-2px);
+      }
+
+      /* Internal Gold Shimmer Animation */
+      .btn-luxury-shine {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          transparent,
+          rgba(212, 175, 55, 0.2), 
+          rgba(255, 255, 255, 0.4),
+          rgba(212, 175, 55, 0.2),
+          transparent
+        );
+        transform: skewX(-25deg);
+        animation: goldShine 3s infinite;
+        pointer-events: none;
+        z-index: 3;
+      }
+
+      @keyframes goldShine {
+        0% { left: -100%; opacity: 0; }
+        10% { opacity: 1; }
+        50% { left: 200%; opacity: 0; }
+        100% { left: 200%; opacity: 0; }
+      }
+
+      /* Walking Border Animation */
+      .btn-border-container {
+        position: absolute;
+        inset: 0;
+        border-radius: 9999px; /* Matches rounded-full */
+        padding: 1.5px; /* Width of the moving border */
+        -webkit-mask: 
+          linear-gradient(#fff 0 0) content-box, 
+          linear-gradient(#fff 0 0);
+        mask: 
+          linear-gradient(#fff 0 0) content-box, 
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: 4; /* On top of background but below text/sheen if possible, but needs to be visible */
+      }
+
+      .btn-border-anim {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: conic-gradient(transparent, transparent, #D4AF37, transparent);
+        transform: translate(-50%, -50%);
+        animation: rotateBorder 4s linear infinite;
+      }
+
+      @keyframes rotateBorder {
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
+      }
+
     </style>
   <script type="importmap">
 {

@@ -71,8 +71,12 @@ const Academy: React.FC = () => {
         </div>
         
         <div className="flex justify-center">
-            <button className="px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 hover:border-brand-gold hover:text-brand-gold transition-colors">
-                SEJA PARCEIRO
+            <button className="btn-luxury px-12 py-4 rounded-full font-bold">
+                <div className="btn-border-container">
+                   <div className="btn-border-anim"></div>
+                </div>
+                <span className="relative z-10">SEJA PARCEIRO</span>
+                <div className="btn-luxury-shine"></div>
             </button>
         </div>
       </div>

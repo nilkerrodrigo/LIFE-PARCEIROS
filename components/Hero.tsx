@@ -16,15 +16,21 @@ const Hero: React.FC = () => {
       >
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-            Como construir uma estrutura que fatura <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-200">no mínimo 10K</span> já nos próximos meses
+            Como construir uma estrutura que fatura <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#FFFACD] to-[#D4AF37] bg-[length:200%_auto] animate-text-shine">no mínimo 10K</span> já nos próximos meses
           </h1>
           <p className="max-w-3xl mx-auto text-gray-300 text-lg md:text-xl font-light leading-relaxed">
             Mesmo começando do zero e usando apenas o CPF como alavanca. Aprenda a operar no mercado de reabilitação de crédito e estruturação de Rating com a metodologia validada por Thassio Andrade.
           </p>
           
-          <div className="pt-4">
-             <a href="#plans" className="inline-block bg-brand-gold hover:bg-yellow-600 text-black font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_40px_rgba(212,175,55,0.5)] hover:scale-105">
-               QUERO CONSTRUIR MINHA ESTRUTURA
+          <div className="pt-8">
+             <a href="#plans" className="btn-luxury inline-block py-4 px-10 rounded-full text-lg font-bold">
+               {/* Walking Border */}
+               <div className="btn-border-container">
+                 <div className="btn-border-anim"></div>
+               </div>
+               
+               <span className="relative z-10">QUERO CONSTRUIR MINHA ESTRUTURA</span>
+               <div className="btn-luxury-shine"></div>
              </a>
           </div>
         </div>

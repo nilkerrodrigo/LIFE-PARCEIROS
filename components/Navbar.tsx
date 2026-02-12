@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Shield } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,10 +32,18 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2 group cursor-pointer">
-          <div className="bg-brand-gold p-1.5 rounded-lg group-hover:shadow-[0_0_15px_rgba(212,175,55,0.5)] transition-all duration-300">
-            <Shield className="w-6 h-6 text-black" />
-          </div>
-          <span className="text-xl font-bold tracking-tight">
+          <img 
+            src="http://life360parceiros.com.br/wp-content/uploads/2026/02/versao-1-dourada.png" 
+            alt="Life 360 Parceiros" 
+            className="h-10 md:h-12 w-auto object-contain"
+            onError={(e) => {
+              // Fallback if image fails (using a text fallback just in case)
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.parentElement?.classList.add('fallback-logo');
+            }}
+          />
+          {/* Fallback Text hidden by default, visible if img fails */}
+          <span className="hidden text-xl font-bold tracking-tight text-white fallback-logo-text">
             LIFE 360 <span className="text-brand-gold">PARCEIROS</span>
           </span>
         </div>
@@ -78,6 +86,13 @@ const Navbar: React.FC = () => {
           ))}
         </div>
       )}
+      
+      {/* Helper style for logo fallback logic inline if needed */}
+      <style>{`
+        .group:has(img[style*="display: none"]) .fallback-logo-text {
+          display: block;
+        }
+      `}</style>
     </nav>
   );
 };

@@ -22,9 +22,12 @@ const Support: React.FC = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <button className="group relative px-8 py-4 rounded-full bg-brand-gold text-black font-semibold text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(212,175,55,0.4)] hover:scale-105 w-full sm:w-auto">
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-            <span className="flex items-center justify-center gap-2">
+          <button className="btn-luxury px-8 py-4 rounded-full font-semibold text-lg w-full sm:w-auto">
+            <div className="btn-border-container">
+               <div className="btn-border-anim"></div>
+            </div>
+            <div className="btn-luxury-shine"></div>
+            <span className="flex items-center justify-center gap-2 relative z-10">
               <MessageCircle className="w-5 h-5" />
               Falar com Suporte
             </span>

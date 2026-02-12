@@ -23,8 +23,12 @@ const PlanCard = ({ title, price, features, recommended, btnText }: any) => (
             ))}
         </ul>
 
-        <button className={`w-full py-4 rounded-xl font-bold transition-all ${recommended ? 'bg-brand-gold hover:bg-yellow-600 text-black shadow-lg shadow-brand-gold/20' : 'bg-white/10 hover:bg-white/20 text-white'}`}>
-            {btnText}
+        <button className={`w-full py-4 rounded-xl font-bold transition-all btn-luxury group`}>
+             <div className="btn-border-container">
+                <div className="btn-border-anim"></div>
+             </div>
+             <span className="relative z-10">{btnText}</span>
+             <div className="btn-luxury-shine"></div>
         </button>
     </div>
 );
@@ -111,8 +115,12 @@ const Plans: React.FC = () => {
                 <span className="text-gray-400 text-xl font-normal">A pergunta é: você vai assistir ou vai operar?</span>
             </h3>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-                 <button className="bg-brand-gold hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-full transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)]">
-                    Quero entrar no Business
+                 <button className="btn-luxury px-8 py-4 rounded-full font-bold">
+                    <div className="btn-border-container">
+                       <div className="btn-border-anim"></div>
+                    </div>
+                    <span className="relative z-10">Quero entrar no Business</span>
+                    <div className="btn-luxury-shine"></div>
                  </button>
                  <button className="border border-white/20 hover:bg-white/10 text-white font-bold py-4 px-8 rounded-full transition-all">
                     Quero começar como Empreendedor
