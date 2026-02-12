@@ -16,12 +16,12 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ title, description, icon, del
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
-      className="group bg-[#151515] p-8 rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all duration-300 hover:-translate-y-2"
+      className="group bg-[#151515] p-6 md:p-8 rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all duration-300 hover:-translate-y-2"
     >
-      <div className="mb-6 p-4 bg-black rounded-lg w-fit text-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.1)]">
+      <div className="mb-4 md:mb-6 p-3 md:p-4 bg-black rounded-lg w-fit text-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.1)]">
         {icon}
       </div>
-      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-brand-gold transition-colors">
+      <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 group-hover:text-brand-gold transition-colors">
         {title}
       </h3>
       <p className="text-gray-400 text-sm leading-relaxed">
@@ -35,40 +35,40 @@ const Services: React.FC = () => {
   const benefits = [
     { 
         title: 'Aprovações mais consistentes', 
-        desc: 'Você para de trabalhar no “talvez” e conduz o cliente com diagnóstico e checklist certo.', 
-        icon: <Target size={28} /> 
+        desc: 'Você conduz o cliente com diagnóstico e checklist certo e reduz tentativa errada.', 
+        icon: <Target className="w-6 h-6 md:w-7 md:h-7" /> 
     },
     { 
         title: 'Mais receita por cliente', 
         desc: 'Você aumenta o ticket com serviços integrados e oportunidades complementares.', 
-        icon: <TrendingUp size={28} /> 
+        icon: <TrendingUp className="w-6 h-6 md:w-7 md:h-7" /> 
     },
     { 
         title: 'Operação blindada', 
-        desc: 'Se uma instituição muda a régua, você tem alternativas - e não trava.', 
-        icon: <Shield size={28} /> 
+        desc: 'Quando uma instituição muda a régua você tem alternativas e não trava.', 
+        icon: <Shield className="w-6 h-6 md:w-7 md:h-7" /> 
     },
     { 
-        title: 'Menos caos, mais controle', 
-        desc: 'Processo, status e organização para acompanhar tudo sem perder tempo.', 
-        icon: <LayoutDashboard size={28} /> 
+        title: 'Menos caos mais controle', 
+        desc: 'Processo status e organização para acompanhar tudo sem perder tempo.', 
+        icon: <LayoutDashboard className="w-6 h-6 md:w-7 md:h-7" /> 
     },
   ];
 
   return (
-    <section id="services" className="py-24 px-6 bg-black">
+    <section id="services" className="py-16 md:py-24 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-10 md:mb-16 text-center"
         >
-          <span className="text-brand-gold font-medium uppercase tracking-widest text-sm">BENEFÍCIOS</span>
-          <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white">O que você ganha na prática</h2>
+          <span className="text-brand-gold font-medium uppercase tracking-widest text-xs md:text-sm">BENEFÍCIOS</span>
+          <h2 className="mt-3 md:mt-4 text-2xl md:text-5xl font-bold text-white">O que você ganha na prática</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {benefits.map((item, index) => (
             <BenefitCard 
               key={item.title} 
@@ -80,8 +80,8 @@ const Services: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-            <a href="#contact-form" className="text-white border-b border-gray-600 hover:text-brand-gold hover:border-brand-gold transition-colors pb-1">
+        <div className="mt-10 md:mt-12 text-center">
+            <a href="#contact-form" className="text-white text-sm md:text-base border-b border-gray-600 hover:text-brand-gold hover:border-brand-gold transition-colors pb-1">
                 Quero conhecer os planos
             </a>
         </div>

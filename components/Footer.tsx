@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Instagram, Linkedin, MessageCircle } from 'lucide-react';
+import { Instagram, Linkedin, MessageCircle } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -9,9 +9,9 @@ const Footer: React.FC = () => {
         <div className="space-y-6 md:col-span-1">
           <div className="flex items-center gap-2">
             <img 
-              src="http://life360parceiros.com.br/wp-content/uploads/2026/02/versao-1-dourada.png" 
+              src="https://life360parceiros.com.br/wp-content/uploads/2026/02/versao-1-dourada.png" 
               alt="Life 360 Parceiros" 
-              className="h-12 w-auto object-contain"
+              className="h-10 w-auto object-contain"
             />
           </div>
           <p className="text-gray-500 text-sm leading-relaxed">
@@ -34,10 +34,10 @@ const Footer: React.FC = () => {
         <div className="md:col-span-2">
            <h4 className="text-white font-bold mb-4">Avisos Legais</h4>
            <p className="text-xs text-gray-500 leading-relaxed mb-4">
-             A Life 360 Parceiros não é uma instituição financeira e não realiza operações de crédito diretamente. Atuamos como plataforma de estruturação, diagnóstico e conexão com parceiros autorizados.
+             Não somos instituição financeira. Operações realizadas por parceiros autorizados.
            </p>
            <p className="text-xs text-gray-500 leading-relaxed">
-             Toda comunicação através de nossos canais oficiais segue rigorosamente a Lei Geral de Proteção de Dados (LGPD). Seus dados são tratados com sigilo.
+             LGPD dados tratados com sigilo.
            </p>
         </div>
 
@@ -45,8 +45,8 @@ const Footer: React.FC = () => {
         <div>
           <h4 className="text-white font-bold mb-6">Links Úteis</h4>
           <ul className="space-y-3 text-sm text-gray-500">
-            <li><a href="#" className="hover:text-brand-gold transition-colors">Termos de Uso</a></li>
             <li><a href="#" className="hover:text-brand-gold transition-colors">Política de Privacidade</a></li>
+            <li><a href="#" className="hover:text-brand-gold transition-colors">Termos de Uso</a></li>
             <li><a href="#contact-form" className="hover:text-brand-gold transition-colors">Fale Conosco</a></li>
           </ul>
         </div>
