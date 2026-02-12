@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PlayCircle } from 'lucide-react';
+import { PlayCircle, Share2 } from 'lucide-react';
 
 const VideoThumbnail: React.FC<{ episode: string; title: string; imageId: number }> = ({ episode, title, imageId }) => {
   return (
@@ -8,57 +8,58 @@ const VideoThumbnail: React.FC<{ episode: string; title: string; imageId: number
       initial={{ opacity: 0, x: 20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      className="flex-shrink-0 w-72 md:w-80 group cursor-pointer"
+      className="flex-shrink-0 w-64 md:w-72 group cursor-pointer relative"
     >
-      <div className="relative aspect-[9/16] rounded-xl overflow-hidden border border-white/10 mb-4 bg-neutral-900">
+      <div className="relative aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 mb-4 bg-black shadow-2xl">
+        {/* Mock Phone UI Header */}
+        <div className="absolute top-4 left-4 z-20 text-[10px] text-gray-400 font-mono tracking-widest">{episode}</div>
+        <div className="absolute top-4 right-4 z-20"><Share2 className="w-4 h-4 text-white" /></div>
+
         <img 
           src={`https://picsum.photos/400/700?random=${imageId}`} 
           alt={title}
-          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+          className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90" />
         
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <PlayCircle className="w-16 h-16 text-brand-red fill-black/50" />
+        {/* Centered Play Button */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-16 h-16 bg-brand-gold rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(212,175,55,0.5)] group-hover:scale-110 transition-transform">
+             <PlayCircle className="w-8 h-8 text-black fill-black" />
+          </div>
         </div>
 
-        <div className="absolute bottom-4 left-4 right-4">
-          <span className="text-xs font-bold bg-brand-red px-2 py-1 rounded text-white mb-2 inline-block">
-            {episode}
-          </span>
+        {/* Bottom Info */}
+        <div className="absolute bottom-6 left-4 right-4 z-20">
+          <div className="flex items-center gap-2 mb-2">
+             <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-black text-xs font-bold">L360</div>
+             <span className="text-xs text-white font-bold">Life 360</span>
+             <span className="bg-white text-black text-[10px] font-bold px-1.5 py-0.5 rounded">Inscreva-se</span>
+          </div>
+          <p className="text-white text-sm font-medium leading-tight line-clamp-2">{title}</p>
         </div>
       </div>
-      <h3 className="text-white font-semibold text-lg group-hover:text-brand-red transition-colors">
-        {title}
-      </h3>
-      <p className="text-gray-500 text-sm mt-1">Mentor Especialista</p>
     </motion.div>
   );
 };
 
 const Academy: React.FC = () => {
   const videos = [
-    { ep: 'EP#01', title: 'Introdução ao Score', id: 101 },
-    { ep: 'EP#02', title: 'Segredos do Bacen', id: 102 },
-    { ep: 'EP#03', title: 'Blindagem Patrimonial', id: 103 },
-    { ep: 'EP#04', title: 'Negociação de Dívidas', id: 104 },
-    { ep: 'EP#05', title: 'Alavancagem de Crédito', id: 105 },
+    { ep: '#ep01', title: 'Como iniciar no mercado de crédito', id: 201 },
+    { ep: '#ep02', title: 'Entendendo a lógica do Rating', id: 202 },
+    { ep: '#ep03', title: 'O segredo da Blindagem Patrimonial', id: 203 },
+    { ep: '#ep04', title: 'Negociação: O caminho do lucro', id: 204 },
   ];
 
   return (
-    <section id="academy" className="py-24 px-6 bg-[#0a0a0a] border-y border-white/5">
+    <section id="academy" className="py-24 px-6 bg-black relative">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
-          <div>
-            <span className="text-brand-red font-bold uppercase tracking-widest text-xs">Academy</span>
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold text-white">Conteúdo Exclusivo</h2>
-          </div>
-          <button className="hidden md:block text-gray-400 hover:text-white transition-colors border-b border-gray-600 hover:border-white pb-1">
-            Ver todos os episódios
-          </button>
+        <div className="text-center mb-12">
+            <h3 className="text-gray-500 uppercase tracking-[0.2em] text-sm mb-2">LIFE 360 ACADEMY</h3>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">Apresentação</h2>
         </div>
 
-        <div className="flex gap-6 overflow-x-auto pb-8 snap-x scrollbar-hide">
+        <div className="flex justify-center gap-6 overflow-x-auto pb-12 snap-x scrollbar-hide flex-nowrap md:grid md:grid-cols-4 md:overflow-visible">
           {videos.map((video) => (
             <VideoThumbnail 
               key={video.ep} 
@@ -69,10 +70,9 @@ const Academy: React.FC = () => {
           ))}
         </div>
         
-        {/* Mobile View All Button */}
-        <div className="md:hidden mt-6 text-center">
-            <button className="text-gray-400 hover:text-white transition-colors border-b border-gray-600 hover:border-white pb-1">
-                Ver todos os episódios
+        <div className="flex justify-center">
+            <button className="px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 hover:border-brand-gold hover:text-brand-gold transition-colors">
+                SEJA PARCEIRO
             </button>
         </div>
       </div>

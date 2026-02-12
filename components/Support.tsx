@@ -6,7 +6,7 @@ const Support: React.FC = () => {
   return (
     <section id="support" className="py-32 px-6 relative bg-neutral-900 overflow-hidden">
         {/* Radial sheen */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[100px]" />
 
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
@@ -22,8 +22,8 @@ const Support: React.FC = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <button className="group relative px-8 py-4 rounded-full bg-brand-red text-white font-semibold text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(255,0,0,0.4)] hover:scale-105 w-full sm:w-auto">
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+          <button className="group relative px-8 py-4 rounded-full bg-brand-gold text-black font-semibold text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(212,175,55,0.4)] hover:scale-105 w-full sm:w-auto">
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
             <span className="flex items-center justify-center gap-2">
               <MessageCircle className="w-5 h-5" />
               Falar com Suporte

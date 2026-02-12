@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HC Academy - Financial Services</title>
+    <title>Life 360 Parceiros - Estruturação de Crédito</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
@@ -15,10 +15,20 @@
             },
             colors: {
               brand: {
-                red: '#FF0000',
+                gold: '#D4AF37',
+                'gold-light': '#F3E5AB',
+                'gold-dark': '#B59020',
                 dark: '#050505',
                 card: '#151515',
                 gray: '#2d2d2d'
+              }
+            },
+            animation: {
+              shimmer: 'shimmer 1.5s infinite',
+            },
+            keyframes: {
+              shimmer: {
+                '100%': { transform: 'translateX(100%)' },
               }
             }
           }
@@ -27,9 +37,23 @@
     </script>
     <style>
       body {
-        background-color: #000000;
+        background-color: #050505;
         color: #ffffff;
       }
+      
+      /* Noise Texture Class */
+      .bg-noise {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.07;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+      }
+
       /* Custom scrollbar for sleek look */
       ::-webkit-scrollbar {
         width: 8px;
@@ -42,7 +66,7 @@
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #FF0000;
+        background: #D4AF37;
       }
     </style>
   <script type="importmap">

@@ -32,11 +32,11 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2 group cursor-pointer">
-          <div className="bg-brand-red p-1.5 rounded-lg group-hover:shadow-[0_0_15px_rgba(255,0,0,0.5)] transition-all duration-300">
-            <Shield className="w-6 h-6 text-white" />
+          <div className="bg-brand-gold p-1.5 rounded-lg group-hover:shadow-[0_0_15px_rgba(212,175,55,0.5)] transition-all duration-300">
+            <Shield className="w-6 h-6 text-black" />
           </div>
           <span className="text-xl font-bold tracking-tight">
-            HC <span className="text-brand-red">ACADEMY</span>
+            LIFE 360 <span className="text-brand-gold">PARCEIROS</span>
           </span>
         </div>
 
@@ -49,14 +49,14 @@ const Navbar: React.FC = () => {
               className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </div>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-white hover:text-brand-red transition-colors"
+          className="md:hidden text-white hover:text-brand-gold transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X /> : <Menu />}
@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-lg font-medium text-gray-300 hover:text-brand-red transition-colors"
+              className="text-lg font-medium text-gray-300 hover:text-brand-gold transition-colors"
             >
               {link.name}
             </a>
