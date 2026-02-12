@@ -55,8 +55,9 @@
         height: 100vh;
         pointer-events: none;
         z-index: 50;
-        opacity: 0.05; /* Adjusted opacity for animated GIF */
-        background-image: url("http://life360parceiros.com.br/wp-content/uploads/2026/02/ruido-animado-1.gif");
+        opacity: 0.05;
+        /* Updated to HTTPS to prevent Mixed Content errors on deploy */
+        background-image: url("https://life360parceiros.com.br/wp-content/uploads/2026/02/ruido-animado-1.gif");
         background-repeat: repeat;
       }
 
@@ -80,7 +81,6 @@
         position: relative;
         overflow: hidden;
         background: linear-gradient(180deg, rgba(30,30,30,0.8) 0%, rgba(0,0,0,0.9) 100%);
-        /* Border is handled by the walking anim now, but we keep a subtle static one for fallback/depth */
         border: 1px solid rgba(255, 255, 255, 0.05);
         color: white;
         text-transform: uppercase;
@@ -168,7 +168,7 @@
         -webkit-mask-composite: xor;
         mask-composite: exclude;
         pointer-events: none;
-        z-index: 4; /* On top of background but below text/sheen if possible, but needs to be visible */
+        z-index: 4;
       }
 
       .btn-border-anim {
@@ -202,5 +202,6 @@
 </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
