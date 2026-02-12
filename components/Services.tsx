@@ -1,75 +1,62 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Eraser, Building2, CreditCard, TrendingUp, Car, Home } from 'lucide-react';
+import { Target, TrendingUp, Shield, LayoutDashboard } from 'lucide-react';
 
-interface ServiceCardProps {
+interface BenefitCardProps {
   title: string;
   description: string;
   icon: React.ReactNode;
   delay: number;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, delay }) => {
+const BenefitCard: React.FC<BenefitCardProps> = ({ title, description, icon, delay }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
-      className="group relative bg-gradient-to-b from-[#2a2a2a] to-[#151515] p-8 rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(212,175,55,0.2)] overflow-hidden"
+      className="group bg-[#151515] p-8 rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all duration-300 hover:-translate-y-2"
     >
-      <div className="relative z-10 flex flex-col items-center text-center gap-4">
-        <div className="p-4 bg-black/40 rounded-full text-white group-hover:text-brand-gold group-hover:scale-110 transition-all duration-300 shadow-inner">
-          {icon}
-        </div>
-        <h3 className="text-xl font-bold text-white group-hover:text-brand-gold transition-colors duration-300">
-          {title}
-        </h3>
-        <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
-          {description}
-        </p>
+      <div className="mb-6 p-4 bg-black rounded-lg w-fit text-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.1)]">
+        {icon}
       </div>
+      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-brand-gold transition-colors">
+        {title}
+      </h3>
+      <p className="text-gray-400 text-sm leading-relaxed">
+        {description}
+      </p>
     </motion.div>
   );
 };
 
 const Services: React.FC = () => {
-  // Mapping the "What you will learn" content to the cards visual
-  const learnItems = [
+  const benefits = [
     { 
-        title: 'Mercado PF', 
-        desc: 'Como funciona o mercado de reabilitação de crédito PF.', 
-        icon: <TrendingUp size={32} /> 
+        title: 'Aprovações mais consistentes', 
+        desc: 'Você para de trabalhar no “talvez” e conduz o cliente com diagnóstico e checklist certo.', 
+        icon: <Target size={28} /> 
     },
     { 
-        title: 'Diagnóstico', 
-        desc: 'Como diagnosticar Rating e situação real do CPF.', 
-        icon: <Building2 size={32} /> 
+        title: 'Mais receita por cliente', 
+        desc: 'Você aumenta o ticket com serviços integrados e oportunidades complementares.', 
+        icon: <TrendingUp size={28} /> 
     },
     { 
-        title: 'Gestão de Clientes', 
-        desc: 'Como conduzir clientes negativados e fechar contratos.', 
-        icon: <Eraser size={32} /> 
+        title: 'Operação blindada', 
+        desc: 'Se uma instituição muda a régua, você tem alternativas - e não trava.', 
+        icon: <Shield size={28} /> 
     },
     { 
-        title: 'Score Turbo', 
-        desc: 'Estratégias avançadas de aumento de score.', 
-        icon: <CreditCard size={32} /> 
-    },
-    { 
-        title: 'Estrutura', 
-        desc: 'Estrutura de operação sem precisar ser especialista.', 
-        icon: <Home size={32} /> 
-    },
-    { 
-        title: 'Renda Mensal', 
-        desc: 'Como transformar essa operação em faturamento recorrente.', 
-        icon: <Car size={32} /> 
+        title: 'Menos caos, mais controle', 
+        desc: 'Processo, status e organização para acompanhar tudo sem perder tempo.', 
+        icon: <LayoutDashboard size={28} /> 
     },
   ];
 
   return (
-    <section id="services" className="py-24 px-6 bg-black relative">
+    <section id="services" className="py-24 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -77,16 +64,13 @@ const Services: React.FC = () => {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <span className="text-brand-gold font-medium uppercase tracking-widest text-sm">SERVIÇOS PARA VENDER PARA O SEU CLIENTE</span>
-          <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white">Seja o melhor, elimine intermediários.</h2>
-          <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-            Ao entrar você terá acesso a todas as ferramentas para dominar esses pilares.
-          </p>
+          <span className="text-brand-gold font-medium uppercase tracking-widest text-sm">BENEFÍCIOS</span>
+          <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white">O que você ganha na prática</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {learnItems.map((item, index) => (
-            <ServiceCard 
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {benefits.map((item, index) => (
+            <BenefitCard 
               key={item.title} 
               title={item.title} 
               description={item.desc}
@@ -94,6 +78,12 @@ const Services: React.FC = () => {
               delay={index * 0.1}
             />
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+            <a href="#contact-form" className="text-white border-b border-gray-600 hover:text-brand-gold hover:border-brand-gold transition-colors pb-1">
+                Quero conhecer os planos
+            </a>
         </div>
       </div>
     </section>

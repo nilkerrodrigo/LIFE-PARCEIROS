@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
+import { MessageCircle, ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -16,79 +16,41 @@ const Hero: React.FC = () => {
       >
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-            Como construir uma estrutura que fatura <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#FFFACD] to-[#D4AF37] bg-[length:200%_auto] animate-text-shine">no mínimo 10K</span> já nos próximos meses
+            A estrutura completa para você aprovar mais crédito e <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#FFFACD] to-[#D4AF37] bg-[length:200%_auto] animate-text-shine">multiplicar sua receita</span>
           </h1>
-          <p className="max-w-3xl mx-auto text-gray-300 text-lg md:text-xl font-light leading-relaxed">
-            Mesmo começando do zero e usando apenas o CPF como alavanca. Aprenda a operar no mercado de reabilitação de crédito e estruturação de Rating com a metodologia validada por Thassio Andrade.
+          
+          <h2 className="text-xl md:text-2xl text-gray-200 font-light">
+             - com processo, diagnóstico e especialistas.
+          </h2>
+
+          <p className="max-w-3xl mx-auto text-gray-400 text-lg leading-relaxed">
+            Chega de depender de poucos bancos e perder cliente no “não aprovado”.
+            Com a <strong>Life 360 Parceiros</strong>, você opera com múltiplas instituições, diagnóstico obrigatório e suporte especializado para aumentar sua taxa de aprovação e fechar mais negócios.
           </p>
           
-          <div className="pt-8">
-             <a href="#plans" className="btn-luxury inline-block py-4 px-10 rounded-full text-lg font-bold">
-               {/* Walking Border */}
+          <div className="flex flex-wrap justify-center gap-4 text-sm font-medium text-brand-gold py-2">
+            <span className="flex items-center gap-1">✅ Plataforma + Mesa Especializada</span>
+            <span className="flex items-center gap-1">✅ Diagnóstico (CreditIA)</span>
+            <span className="flex items-center gap-1">✅ Serviços integrados</span>
+          </div>
+
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
+             {/* CTA 1 - Specialist */}
+             <a href="#contact-form" className="btn-luxury inline-block py-4 px-10 rounded-full text-lg font-bold min-w-[300px]">
                <div className="btn-border-container">
                  <div className="btn-border-anim"></div>
                </div>
-               
-               <span className="relative z-10">QUERO CONSTRUIR MINHA ESTRUTURA</span>
+               <span className="relative z-10 flex items-center justify-center gap-2">
+                 Quero falar com um especialista <ArrowRight size={20} />
+               </span>
                <div className="btn-luxury-shine"></div>
              </a>
           </div>
+          
+          <p className="text-xs text-gray-600 mt-4">
+            🔒 Seus dados são protegidos e usados apenas para contato.
+          </p>
         </div>
-
-        {/* Dashboard Browser Mockup */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="mt-16 relative mx-auto w-full max-w-5xl"
-        >
-            {/* Browser Window Frame */}
-            <div className="rounded-xl bg-[#151515] border border-white/10 shadow-2xl overflow-hidden">
-                {/* Browser Toolbar */}
-                <div className="h-10 bg-[#0f0f0f] border-b border-white/5 flex items-center px-4 space-x-2">
-                    <div className="flex space-x-2">
-                        <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
-                        <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-                        <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
-                    </div>
-                    <div className="flex-1 flex justify-center">
-                         <div className="bg-[#1a1a1a] rounded-md px-3 py-1 text-xs text-gray-500 w-1/2 text-center font-mono">
-                            app.life360parceiros.com.br
-                         </div>
-                    </div>
-                </div>
-
-                {/* Content Area (Video/Image Placeholder) */}
-                <div className="relative aspect-video bg-neutral-900 group cursor-pointer">
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1642543492481-44e81e3914a7?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                    
-                    {/* Dashboard UI Elements Mockup Overlay */}
-                    <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                        <div className="flex justify-between items-start">
-                            <div className="bg-white/5 backdrop-blur-md p-4 rounded-lg border border-white/10 w-64">
-                                <div className="text-xs text-gray-400">Faturamento Mensal</div>
-                                <div className="text-2xl font-bold text-white mt-1">R$ 12.450,00</div>
-                                <div className="text-xs text-brand-gold mt-2 flex items-center gap-1">
-                                    ▲ 15% vs mês anterior
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Play Button */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-24 h-24 bg-brand-gold/90 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-brand-gold transition-all duration-300 group-hover:scale-110 shadow-[0_0_30px_rgba(212,175,55,0.4)]">
-                        <Play className="w-10 h-10 text-black fill-current ml-1" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            {/* Glow Effect behind */}
-            <div className="absolute -inset-4 bg-brand-gold/20 blur-3xl -z-10 rounded-[3rem] opacity-40" />
-        </motion.div>
       </motion.div>
     </section>
   );

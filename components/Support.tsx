@@ -1,46 +1,73 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { MessageCircle, HelpCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
+
+interface FAQItemProps {
+  question: string;
+  answer: string;
+}
+
+const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+        <div className="border-b border-white/10 last:border-0">
+            <button 
+                onClick={() => setIsOpen(!isOpen)} 
+                className="w-full flex items-center justify-between py-6 text-left hover:text-brand-gold transition-colors"
+            >
+                <span className="text-lg font-medium text-white pr-4">{question}</span>
+                <ChevronDown className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180 text-brand-gold' : 'text-gray-500'}`} />
+            </button>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div 
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden"
+                    >
+                        <p className="text-gray-400 pb-6 leading-relaxed">
+                            {answer}
+                        </p>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+};
 
 const Support: React.FC = () => {
+  const faqs = [
+      { q: "A Life 360 Parceiros é um banco?", a: "Não. Nós oferecemos estrutura, plataforma e suporte para intermediação e organização. As operações são realizadas por instituições/parceiros conforme regras aplicáveis." },
+      { q: "O Diagnóstico (CreditIA) é obrigatório?", a: "Sim. É parte do processo para direcionar a análise e evitar retrabalho. Sem ele, a análise não avança." },
+      { q: "Em quanto tempo sai uma resposta?", a: "Depende do produto e do envio correto da documentação. Quanto mais completo o envio, mais rápido o retorno da instituição." },
+      { q: "Eu preciso ter experiência com crédito?", a: "Não necessariamente. Você pode começar do zero, desde que siga o processo e use o suporte/treinamento que oferecemos." },
+      { q: "Como funciona o suporte?", a: "Você recebe orientação e apoio operacional/técnico para conduzir seus casos com mais eficiência através dos nossos canais oficiais." },
+      { q: "Meus dados e os do cliente ficam seguros?", a: "Sim. Os dados são tratados com sigilo e em total conformidade com a LGPD." },
+  ];
+
   return (
-    <section id="support" className="py-32 px-6 relative bg-neutral-900 overflow-hidden">
-        {/* Radial sheen */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[100px]" />
-
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        className="relative max-w-4xl mx-auto text-center z-10"
-      >
-        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-          Ficou alguma dúvida?
+    <section id="faq" className="py-24 px-6 bg-neutral-900 relative">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-12 text-center">
+          Dúvidas frequentes
         </h2>
-        <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-          Nossa equipe de especialistas está pronta para analisar o seu caso e oferecer a melhor solução financeira.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <button className="btn-luxury px-8 py-4 rounded-full font-semibold text-lg w-full sm:w-auto">
-            <div className="btn-border-container">
-               <div className="btn-border-anim"></div>
-            </div>
-            <div className="btn-luxury-shine"></div>
-            <span className="flex items-center justify-center gap-2 relative z-10">
-              <MessageCircle className="w-5 h-5" />
-              Falar com Suporte
-            </span>
-          </button>
-
-          <button className="px-8 py-4 rounded-full border border-white/20 text-white font-semibold text-lg hover:bg-white/5 transition-all hover:border-white w-full sm:w-auto">
-            <span className="flex items-center justify-center gap-2">
-              <HelpCircle className="w-5 h-5" />
-              Perguntas Frequentes
-            </span>
-          </button>
+        
+        <div className="bg-black/50 rounded-2xl border border-white/5 p-8">
+            {faqs.map((faq, i) => <FAQItem key={i} question={faq.q} answer={faq.a} />)}
         </div>
-      </motion.div>
+
+        <div className="mt-16 text-center">
+            <h3 className="text-2xl font-bold text-white mb-4">Você pode continuar perdendo cliente no “não aprovado”… ou pode operar com estrutura.</h3>
+            <p className="text-gray-400 mb-8">Se você quer aprovar mais, ganhar mais por cliente e ter uma operação previsível, a Life 360 Parceiros é o próximo passo.</p>
+            <a href="#contact-form" className="btn-luxury px-10 py-4 rounded-full font-bold inline-block">
+                <div className="btn-border-container"><div className="btn-border-anim"></div></div>
+                <span className="relative z-10">SOLICITAR CONTATO AGORA</span>
+                <div className="btn-luxury-shine"></div>
+            </a>
+            <p className="text-xs text-gray-500 mt-4">Resposta no WhatsApp. Sem compromisso.</p>
+        </div>
+      </div>
     </section>
   );
 };

@@ -1,72 +1,60 @@
 import React from 'react';
-import { Shield, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { Shield, Instagram, Linkedin, MessageCircle } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black border-t border-white/10 pt-20 pb-10 px-6 relative z-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-black border-t border-white/10 pt-16 pb-10 px-6 relative z-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         {/* Brand Column */}
-        <div className="space-y-6">
+        <div className="space-y-6 md:col-span-1">
           <div className="flex items-center gap-2">
-            <div className="bg-brand-gold p-1.5 rounded-lg">
-              <Shield className="w-5 h-5 text-black" />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-white">
-              LIFE 360 <span className="text-brand-gold">PARCEIROS</span>
-            </span>
+            <img 
+              src="http://life360parceiros.com.br/wp-content/uploads/2026/02/versao-1-dourada.png" 
+              alt="Life 360 Parceiros" 
+              className="h-12 w-auto object-contain"
+            />
           </div>
           <p className="text-gray-500 text-sm leading-relaxed">
-            Transformando realidades financeiras através de conhecimento, tecnologia e consultoria especializada.
+            Estrutura completa para profissionais de crédito.
           </p>
           <div className="flex gap-4">
             <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-black transition-all">
                 <Instagram size={18} />
             </a>
             <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-black transition-all">
-                <Youtube size={18} />
+                <Linkedin size={18} />
             </a>
             <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-black transition-all">
-                <Linkedin size={18} />
+                <MessageCircle size={18} />
             </a>
           </div>
         </div>
 
-        {/* Links Column 1 */}
-        <div>
-          <h4 className="text-white font-bold mb-6">Navegação</h4>
-          <ul className="space-y-4 text-sm text-gray-500">
-            <li><a href="#" className="hover:text-brand-gold transition-colors">Painel do Cliente</a></li>
-            <li><a href="#services" className="hover:text-brand-gold transition-colors">Serviços</a></li>
-            <li><a href="#academy" className="hover:text-brand-gold transition-colors">Academy</a></li>
-            <li><a href="#support" className="hover:text-brand-gold transition-colors">Suporte</a></li>
-          </ul>
+        {/* Legal Column */}
+        <div className="md:col-span-2">
+           <h4 className="text-white font-bold mb-4">Avisos Legais</h4>
+           <p className="text-xs text-gray-500 leading-relaxed mb-4">
+             A Life 360 Parceiros não é uma instituição financeira e não realiza operações de crédito diretamente. Atuamos como plataforma de estruturação, diagnóstico e conexão com parceiros autorizados.
+           </p>
+           <p className="text-xs text-gray-500 leading-relaxed">
+             Toda comunicação através de nossos canais oficiais segue rigorosamente a Lei Geral de Proteção de Dados (LGPD). Seus dados são tratados com sigilo.
+           </p>
         </div>
 
-        {/* Links Column 2 */}
+        {/* Links Column */}
         <div>
-          <h4 className="text-white font-bold mb-6">Legal</h4>
-          <ul className="space-y-4 text-sm text-gray-500">
+          <h4 className="text-white font-bold mb-6">Links Úteis</h4>
+          <ul className="space-y-3 text-sm text-gray-500">
             <li><a href="#" className="hover:text-brand-gold transition-colors">Termos de Uso</a></li>
             <li><a href="#" className="hover:text-brand-gold transition-colors">Política de Privacidade</a></li>
-            <li><a href="#" className="hover:text-brand-gold transition-colors">Compliance</a></li>
-          </ul>
-        </div>
-
-        {/* Contact Column */}
-        <div>
-          <h4 className="text-white font-bold mb-6">Contato</h4>
-          <ul className="space-y-4 text-sm text-gray-500">
-            <li>São Paulo, SP - Brasil</li>
-            <li>Av. Paulista, 1000 - Sala 42</li>
-            <li>contato@life360parceiros.com.br</li>
-            <li className="pt-2 text-xs text-gray-600">CNPJ: 00.000.000/0001-00</li>
+            <li><a href="#contact-form" className="hover:text-brand-gold transition-colors">Fale Conosco</a></li>
           </ul>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 gap-4">
         <p>&copy; 2024 Life 360 Parceiros. Todos os direitos reservados.</p>
-        <p>Designed with <span className="text-brand-gold">♥</span> for excellence.</p>
+        <p>São Paulo, SP - Brasil</p>
       </div>
     </footer>
   );

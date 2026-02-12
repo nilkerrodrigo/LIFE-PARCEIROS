@@ -1,54 +1,63 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { AlertCircle } from 'lucide-react';
+import { AlertTriangle, XCircle, ArrowDown } from 'lucide-react';
 
 const BeliefBreaking: React.FC = () => {
   return (
-    <section className="py-20 px-6 bg-neutral-900/50 border-y border-white/5">
-      <div className="max-w-4xl mx-auto text-center">
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/20 px-4 py-2 rounded-full text-brand-gold text-sm font-semibold mb-6"
-        >
-            <AlertCircle size={16} />
-            <span>QUEBRA DE CRENÇA</span>
-        </motion.div>
-        
-        <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-white mb-8"
-        >
-            A maioria das pessoas acha que precisa de <span className="line-through text-gray-500 decoration-brand-gold">dinheiro</span> pra começar...
-        </motion.h2>
+    <section className="py-24 px-6 bg-neutral-900/30 border-y border-white/5">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 bg-red-900/20 border border-red-500/20 px-4 py-2 rounded-full text-red-500 text-sm font-semibold mb-6"
+            >
+                <AlertTriangle size={16} />
+                <span>IDENTIFICAÇÃO</span>
+            </motion.div>
+            
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                Se você trabalha com crédito, provavelmente já vive isso:
+            </h2>
+        </div>
 
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {[
+                "Você perde vendas porque o banco “não aprovou” - e ninguém explica o motivo com clareza.",
+                "Você depende de 1–3 instituições… e quando a regra muda, sua operação despenca.",
+                "Você vira “faz tudo”: documento, pendência, análise, follow-up… e o dia vira caos.",
+                "Você indica serviços importantes pro cliente, mas não monetiza - e vê dinheiro indo embora."
+            ].map((pain, idx) => (
+                <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="flex items-start gap-4 p-6 bg-black border border-white/5 rounded-xl hover:border-red-900/50 transition-colors"
+                >
+                    <div className="mt-1">
+                        <XCircle className="text-red-600" size={24} />
+                    </div>
+                    <p className="text-gray-300 text-lg">{pain}</p>
+                </motion.div>
+            ))}
+        </div>
+
+        <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="bg-black/50 p-8 rounded-2xl border border-white/10"
+            className="text-center space-y-8"
         >
-            <p className="text-xl text-gray-300 font-light mb-6">Mas a verdade é outra:</p>
-            <ul className="grid md:grid-cols-2 gap-4 text-left">
-                {[
-                    "O mercado de reabilitação de crédito cresce todos os meses",
-                    "Milhões de CPFs estão negativados no Brasil",
-                    "Falta operador preparado para atender essa demanda",
-                    "Quem domina estrutura de CPF, domina escala"
-                ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-gray-400">
-                        <span className="text-brand-gold font-bold">✔</span> {item}
-                    </li>
-                ))}
-            </ul>
-            <p className="mt-8 text-white font-bold text-lg border-t border-white/10 pt-6">
-                Você não precisa de capital alto. Precisa de <span className="text-brand-gold">método, direção e estrutura.</span>
-            </p>
+            <h3 className="text-2xl font-bold text-white">
+                No fim, você trabalha muito e aprova menos do que poderia.
+            </h3>
+            
+            <a href="#contact-form" className="inline-flex items-center gap-2 text-brand-gold font-bold uppercase tracking-wider hover:text-white transition-colors">
+                Quero destravar minhas aprovações <ArrowDown size={18} />
+            </a>
         </motion.div>
       </div>
     </section>
