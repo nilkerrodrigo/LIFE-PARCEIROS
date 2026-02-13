@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const whatsappLink = "https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6";
-
   return (
     <section id="hero" className="relative pt-28 pb-16 md:pt-36 md:pb-24 px-6 min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Background Gradient */}
@@ -46,34 +44,17 @@ const Hero: React.FC = () => {
              </div>
           </div>
 
-          <div className="pt-6 md:pt-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
-             {/* CTA 1: Empreendedor */}
-             <div className="flex flex-col items-center w-full md:w-auto">
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-luxury w-full md:w-auto inline-block py-3 px-6 md:py-4 md:px-8 rounded-full text-sm md:text-base font-bold min-w-[280px]">
-                  <div className="btn-border-container"><div className="btn-border-anim"></div></div>
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    Quero começar no Empreendedor <ArrowRight size={18} />
-                  </span>
-                  <div className="btn-luxury-shine"></div>
-                </a>
-                <span className="text-[10px] text-gray-500 mt-2">Acesso com a marca Life360. Ideal para iniciar.</span>
-             </div>
-
-             {/* CTA 2: Business */}
-             <div className="flex flex-col items-center w-full md:w-auto">
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-full md:w-auto inline-block py-3 px-6 md:py-4 md:px-8 rounded-full text-sm md:text-base font-bold min-w-[280px] border border-white/20 hover:border-brand-gold hover:text-brand-gold transition-all bg-white/5 backdrop-blur-sm">
-                  <span className="flex items-center justify-center gap-2">
-                    Quero o Business White Label
-                  </span>
-                </a>
-                <span className="text-[10px] text-gray-500 mt-2">Sua marca, sua operação. Ideal para escalar.</span>
-             </div>
-          </div>
-          
-          <div className="flex flex-col items-center gap-1 mt-6">
-            <p className="text-[10px] md:text-xs text-gray-600">
-              🔒 Seus dados são protegidos e usados apenas para contato.
-            </p>
+          <div className="pt-6 md:pt-8 flex flex-col items-center justify-center">
+             <a href="#plans" className="btn-luxury inline-block py-4 px-10 rounded-full text-base md:text-lg font-bold min-w-[280px] md:min-w-[320px]">
+               <div className="btn-border-container"><div className="btn-border-anim"></div></div>
+               <span className="relative z-10 flex items-center justify-center gap-2">
+                 Quero escolher meu plano <ArrowRight size={18} />
+               </span>
+               <div className="btn-luxury-shine"></div>
+             </a>
+             <p className="text-[10px] md:text-xs text-gray-500 mt-4">
+              🔒 Seus dados são protegidos. Acesso imediato após cadastro.
+             </p>
           </div>
         </div>
       </motion.div>

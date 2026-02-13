@@ -8,7 +8,6 @@ import Methodology from './components/Methodology';
 import Academy from './components/Academy';
 import Testimonials from './components/Testimonials';
 import Plans from './components/Plans';
-import ContactForm from './components/ContactForm';
 import TargetAudience from './components/TargetAudience';
 import Support from './components/Support';
 import Footer from './components/Footer';
@@ -29,7 +28,6 @@ const App: React.FC = () => {
         <Methodology />
         <TargetAudience />
         <Plans />
-        <ContactForm />
         <Support />
       </main>
       <Footer />

@@ -14,7 +14,7 @@ const Testimonials: React.FC = () => {
         </p>
         
         <div className="mt-8 md:mt-12">
-            <a href="#contact-form" className="btn-luxury px-6 py-3 md:px-8 md:py-3 rounded-full text-xs md:text-sm font-bold inline-block w-full md:w-auto">
+            <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className="btn-luxury px-6 py-3 md:px-8 md:py-3 rounded-full text-xs md:text-sm font-bold inline-block w-full md:w-auto">
                 <div className="btn-border-container"><div className="btn-border-anim"></div></div>
                 <span className="relative z-10">QUERO VER COMO FUNCIONA NA PRÁTICA</span>
                 <div className="btn-luxury-shine"></div>

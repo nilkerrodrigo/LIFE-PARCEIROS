@@ -6,7 +6,7 @@ const PlanCard = ({ title, price, description, features, cta, highlight = false,
     return (
         <div className={`relative flex flex-col p-6 md:p-8 rounded-2xl border transition-all duration-300 ${highlight ? 'bg-[#1a1a1a] border-brand-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.1)] scale-100 md:scale-105 z-10' : 'bg-[#101010] border-white/10 hover:border-white/20'}`}>
             {badge && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-gold text-black text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-gold text-black text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
                     {badge}
                 </div>
             )}
@@ -15,7 +15,7 @@ const PlanCard = ({ title, price, description, features, cta, highlight = false,
                 <h3 className={`text-xl font-bold mb-2 ${highlight ? 'text-brand-gold' : 'text-white'}`}>{title}</h3>
                 <div className="flex items-baseline justify-center gap-1 mb-2">
                     <span className="text-sm text-gray-500">R$</span>
-                    <span className="text-3xl md:text-4xl font-bold text-white">{price}</span>
+                    <span className={`font-bold text-white ${highlight ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl'}`}>{price}</span>
                 </div>
                 <p className="text-xs md:text-sm text-gray-400">{description}</p>
             </div>
@@ -29,8 +29,16 @@ const PlanCard = ({ title, price, description, features, cta, highlight = false,
                 ))}
             </ul>
 
-            <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className={`w-full py-3 rounded-xl font-bold text-center text-sm transition-all ${highlight ? 'bg-brand-gold text-black hover:bg-white' : 'bg-white/10 text-white hover:bg-white/20'}`}>
-                {cta}
+            <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className={`w-full py-3 rounded-xl font-bold text-center text-sm transition-all ${highlight ? 'btn-luxury text-white' : 'bg-white/10 text-white hover:bg-white/20'}`}>
+                {highlight ? (
+                    <>
+                        <div className="btn-border-container"><div className="btn-border-anim"></div></div>
+                        <span className="relative z-10">{cta}</span>
+                        <div className="btn-luxury-shine"></div>
+                    </>
+                ) : (
+                    cta
+                )}
             </a>
         </div>
     );
@@ -45,7 +53,7 @@ const Plans: React.FC = () => {
             <p className="text-gray-400 text-sm md:text-base">Valide rápido ou escale com marca própria.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center">
             <PlanCard 
                 title="Plano Empreendedor"
                 price="97"
@@ -57,8 +65,7 @@ const Plans: React.FC = () => {
                     "Acesso completo à plataforma"
                 ]}
                 cta="Começar no Empreendedor"
-                badge="Mais Popular"
-                highlight={true}
+                highlight={false}
             />
 
             <PlanCard 
@@ -69,9 +76,12 @@ const Plans: React.FC = () => {
                     "White Label com sua marca",
                     "Gestão de equipe e permissões",
                     "Ideal para quem já tem base de clientes",
-                    "Estrutura para crescimento estruturado"
+                    "Estrutura para crescimento estruturado",
+                    "Acesso prioritário a novos produtos"
                 ]}
                 cta="Quero o Business White Label"
+                badge="Recomendado"
+                highlight={true}
             />
         </div>
 
@@ -84,7 +94,7 @@ const Plans: React.FC = () => {
              </div>
         </div>
 
-        {/* Network Section - Inserted here as requested within flow */}
+        {/* Network Section */}
         <div className="mt-12 md:mt-16 text-center max-w-2xl mx-auto">
              <h4 className="text-white font-bold mb-2 flex items-center justify-center gap-2">
                 <Briefcase size={18} className="text-brand-gold" /> Rede de Indicações Estruturada

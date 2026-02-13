@@ -2,6 +2,8 @@ import React from 'react';
 import { Instagram, Linkedin, MessageCircle } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const whatsappLink = "https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6";
+
   return (
     <footer className="bg-black border-t border-white/10 pt-16 pb-10 px-6 relative z-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
@@ -24,7 +26,7 @@ const Footer: React.FC = () => {
             <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-black transition-all">
                 <Linkedin size={18} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-black transition-all">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-black transition-all">
                 <MessageCircle size={18} />
             </a>
           </div>
@@ -47,7 +49,7 @@ const Footer: React.FC = () => {
           <ul className="space-y-3 text-sm text-gray-500">
             <li><a href="#" className="hover:text-brand-gold transition-colors">Política de Privacidade</a></li>
             <li><a href="#" className="hover:text-brand-gold transition-colors">Termos de Uso</a></li>
-            <li><a href="#contact-form" className="hover:text-brand-gold transition-colors">Fale Conosco</a></li>
+            <li><a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">Fale Conosco</a></li>
           </ul>
         </div>
       </div>
