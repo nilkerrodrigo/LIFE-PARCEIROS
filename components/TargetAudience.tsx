@@ -18,10 +18,10 @@ const TargetAudience: React.FC = () => {
                 </h3>
                 <ul className="space-y-3 md:space-y-4">
                     {[
-                        "Quer aprovar mais e parar de depender de poucas instituições",
-                        "Quer aumentar conversão e fechar mais negócios",
-                        "Quer organizar operação e ter processo",
-                        "Quer transformar atendimento em receita recorrente"
+                        "Quer aprovar mais com processo e direção",
+                        "Quer aumentar conversão e ticket por cliente",
+                        "Quer parar de depender do improviso e organizar a operação",
+                        "Quer crescer com suporte, treinamento e estrutura"
                     ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-gray-300 text-sm md:text-base">
                             <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
@@ -31,7 +31,7 @@ const TargetAudience: React.FC = () => {
                 </ul>
                 <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-white/5">
                     <p className="text-xs md:text-sm text-gray-400 font-medium leading-relaxed">
-                        Perfeito para correspondente bancário consultor financeiro corretor de imóveis contador empresário e profissionais que querem operar crédito com estrutura.
+                        Perfeito para correspondente e promotor de crédito, consultor financeiro, corretor de imóveis, contador, loja de veículos e profissionais que querem operar crédito com esteira.
                     </p>
                 </div>
             </div>
@@ -46,9 +46,9 @@ const TargetAudience: React.FC = () => {
                 </h3>
                 <ul className="space-y-3 md:space-y-4">
                     {[
-                        "Quem busca atalho ou promessa milagrosa",
+                        "Quem busca promessa milagrosa",
                         "Quem não quer seguir processo e checklist",
-                        "Quem não trabalha com ética e sigilo de dados"
+                        "Quem não trabalha com ética, transparência e LGPD"
                     ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-gray-300 text-sm md:text-base">
                             <X className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
@@ -60,7 +60,7 @@ const TargetAudience: React.FC = () => {
           </div>
           
           <div className="mt-10 md:mt-12 text-center">
-            <a href="#contact-form" className="text-brand-gold font-bold hover:text-white transition-colors text-sm md:text-base">QUERO FALAR COM UM ESPECIALISTA &rarr;</a>
+            <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className="text-brand-gold font-bold hover:text-white transition-colors text-sm md:text-base">QUERO FALAR COM UM ESPECIALISTA &rarr;</a>
           </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BrainCircuit, Users, MonitorSmartphone, Layers, GraduationCap, Headphones } from 'lucide-react';
+import { BrainCircuit, Search, Briefcase, FileText, Wallet, GraduationCap, Users } from 'lucide-react';
 
 const DeliverableItem = ({ title, desc, icon }: any) => (
     <div className="flex items-start gap-4 p-5 md:p-6 rounded-xl bg-[#111] border border-white/5 hover:border-brand-gold/30 transition-colors">
@@ -19,48 +19,53 @@ const Academy: React.FC = () => {
     <section id="academy" className="py-16 md:py-24 px-6 bg-black relative border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">Tudo o que você precisa em um só lugar</h2>
+            <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">A plataforma completa para operar crédito com método</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-10 md:mb-12">
-            <DeliverableItem 
-                icon={<Users size={22} className="md:w-6 md:h-6" />}
-                title="Mesa Especializada"
-                desc="Com orientação e apoio em casos e estratégias."
-            />
              <DeliverableItem 
                 icon={<BrainCircuit size={22} className="md:w-6 md:h-6" />}
-                title="CreditIA Diagnóstico"
-                desc="Obrigatório com direcionamento de perfil e consultas."
+                title="Diagnóstico CreditIA"
+                desc="Fluxo obrigatório para dar direção e reduzir retrabalho."
+            />
+            <DeliverableItem 
+                icon={<Search size={22} className="md:w-6 md:h-6" />}
+                title="Consultas e Análises"
+                desc="Para apoiar decisão (ex: pendências e SCR)."
             />
              <DeliverableItem 
-                icon={<MonitorSmartphone size={22} className="md:w-6 md:h-6" />}
-                title="Plataforma Digital"
-                desc="Para gestão e acompanhamento dos atendimentos."
+                icon={<Wallet size={22} className="md:w-6 md:h-6" />}
+                title="Soluções Integradas"
+                desc="Monetize casos travados com Limpa Nome e Rating."
             />
              <DeliverableItem 
-                icon={<Layers size={22} className="md:w-6 md:h-6" />}
-                title="Serviços Integrados"
-                desc="Para aumentar taxa de aprovação e ticket."
+                icon={<FileText size={22} className="md:w-6 md:h-6" />}
+                title="Vendas e CRM"
+                desc="Pipeline completo, propostas e contratos."
+            />
+             <DeliverableItem 
+                icon={<Briefcase size={22} className="md:w-6 md:h-6" />}
+                title="Carteira e Comissões"
+                desc="Gestão financeira e rede de indicações."
+            />
+             <DeliverableItem 
+                icon={<Users size={22} className="md:w-6 md:h-6" />}
+                title="Gestão de Equipe"
+                desc="Controle de permissões (exclusivo Business)."
             />
              <DeliverableItem 
                 icon={<GraduationCap size={22} className="md:w-6 md:h-6" />}
-                title="Treinamento e Academy"
-                desc="Para operação e crescimento contínuo."
-            />
-             <DeliverableItem 
-                icon={<Headphones size={22} className="md:w-6 md:h-6" />}
-                title="Suporte técnico"
-                desc="Suporte operacional para destravar sua rotina."
+                title="Universidade Life360"
+                desc="Treinamento e suporte operacional constante."
             />
         </div>
         
         <div className="flex justify-center">
-            <a href="#contact-form" className="btn-luxury px-8 py-3 md:px-12 md:py-4 rounded-full font-bold text-sm md:text-base w-full md:w-auto text-center">
+            <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className="btn-luxury px-8 py-3 md:px-12 md:py-4 rounded-full font-bold text-sm md:text-base w-full md:w-auto text-center">
                 <div className="btn-border-container">
                    <div className="btn-border-anim"></div>
                 </div>
-                <span className="relative z-10">QUERO ACESSO À PLATAFORMA</span>
+                <span className="relative z-10">QUERO COMEÇAR COM APOIO DO TIME</span>
                 <div className="btn-luxury-shine"></div>
             </a>
         </div>

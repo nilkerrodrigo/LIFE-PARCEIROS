@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, TrendingUp, Shield, LayoutDashboard } from 'lucide-react';
+import { Target, TrendingUp, ShieldCheck, LayoutDashboard } from 'lucide-react';
 
 interface BenefitCardProps {
   title: string;
@@ -34,24 +34,24 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ title, description, icon, del
 const Services: React.FC = () => {
   const benefits = [
     { 
-        title: 'Aprovações mais consistentes', 
-        desc: 'Você conduz o cliente com diagnóstico e checklist certo e reduz tentativa errada.', 
+        title: 'Mais consistência', 
+        desc: 'Diagnóstico obrigatório e checklist ajudam você a conduzir com padrão.', 
         icon: <Target className="w-6 h-6 md:w-7 md:h-7" /> 
     },
     { 
-        title: 'Mais receita por cliente', 
-        desc: 'Você aumenta o ticket com serviços integrados e oportunidades complementares.', 
+        title: 'Mais receita', 
+        desc: 'Consultas e soluções integradas aumentam seu ticket com clareza de oferta.', 
         icon: <TrendingUp className="w-6 h-6 md:w-7 md:h-7" /> 
     },
     { 
-        title: 'Operação blindada', 
-        desc: 'Quando uma instituição muda a régua você tem alternativas e não trava.', 
-        icon: <Shield className="w-6 h-6 md:w-7 md:h-7" /> 
+        title: 'Menos caos', 
+        desc: 'Pipeline, status e histórico para acompanhar tudo sem se perder.', 
+        icon: <LayoutDashboard className="w-6 h-6 md:w-7 md:h-7" /> 
     },
     { 
-        title: 'Menos caos mais controle', 
-        desc: 'Processo status e organização para acompanhar tudo sem perder tempo.', 
-        icon: <LayoutDashboard className="w-6 h-6 md:w-7 md:h-7" /> 
+        title: 'Mais confiança', 
+        desc: 'Processo transparente e posicionamento correto para proteger sua reputação.', 
+        icon: <ShieldCheck className="w-6 h-6 md:w-7 md:h-7" /> 
     },
   ];
 
@@ -81,7 +81,7 @@ const Services: React.FC = () => {
         </div>
 
         <div className="mt-10 md:mt-12 text-center">
-            <a href="#contact-form" className="text-white text-sm md:text-base border-b border-gray-600 hover:text-brand-gold hover:border-brand-gold transition-colors pb-1">
+            <a href="#plans" className="text-white text-sm md:text-base border-b border-gray-600 hover:text-brand-gold hover:border-brand-gold transition-colors pb-1">
                 Quero conhecer os planos
             </a>
         </div>

@@ -38,12 +38,10 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
 
 const Support: React.FC = () => {
   const faqs = [
-      { q: "A Life 360 Parceiros é um banco?", a: "Não. A Life 360 Parceiros oferece estrutura plataforma e suporte. As operações são realizadas por instituições parceiras conforme regras aplicáveis." },
+      { q: "A Life 360 Parceiros é um banco?", a: "Não. A Life 360 Parceiros oferece estrutura, plataforma e suporte. As operações seguem regras aplicáveis das instituições e parceiros." },
       { q: "O Diagnóstico CreditIA é obrigatório?", a: "Sim. Ele faz parte do processo e sem ele a análise não avança." },
-      { q: "Em quanto tempo sai uma resposta?", a: "Depende do produto e da documentação enviada. Documentação completa acelera o processo." },
-      { q: "Preciso ter experiência com crédito?", a: "Não necessariamente. Você pode começar do zero desde que siga o processo e use o suporte e o treinamento." },
-      { q: "Como funciona o suporte?", a: "Você recebe orientação e apoio para conduzir seus casos com mais eficiência." },
-      { q: "Meus dados e os do cliente ficam seguros?", a: "Sim. Os dados devem ser tratados com sigilo e em conformidade com a LGPD." },
+      { q: "Eu posso vender com minha marca?", a: "Sim, no plano Business White Label." },
+      { q: "Preciso ter experiência?", a: "Não necessariamente. Você pode começar do zero desde que siga o processo e use suporte e treinamento." },
   ];
 
   return (
@@ -58,14 +56,19 @@ const Support: React.FC = () => {
         </div>
 
         <div className="mt-12 md:mt-16 text-center">
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Você pode continuar perdendo cliente no não aprovado ou pode operar com estrutura</h3>
-            <p className="text-gray-400 mb-8 text-sm md:text-base">Se você quer aprovar mais, ganhar mais por cliente e ter uma operação previsível a Life 360 Parceiros é o próximo passo.</p>
-            <a href="#contact-form" className="btn-luxury px-8 py-3 md:px-10 md:py-4 rounded-full font-bold inline-block w-full md:w-auto text-sm md:text-base">
-                <div className="btn-border-container"><div className="btn-border-anim"></div></div>
-                <span className="relative z-10">Solicitar contato e condições</span>
-                <div className="btn-luxury-shine"></div>
-            </a>
-            <p className="text-xs text-gray-500 mt-4">Resposta por WhatsApp e sem compromisso.</p>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Pare de perder venda no “não aprovado” e opere com uma esteira completa</h3>
+            <p className="text-gray-400 mb-8 text-sm md:text-base">Se você quer mais controle, mais consistência e mais receita por atendimento, a Life 360 Parceiros coloca método e estrutura na sua operação.</p>
+            
+            <div className="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className="btn-luxury px-8 py-3 md:px-10 md:py-4 rounded-full font-bold inline-block w-full md:w-auto text-sm md:text-base">
+                    <div className="btn-border-container"><div className="btn-border-anim"></div></div>
+                    <span className="relative z-10">Começar no Empreendedor</span>
+                    <div className="btn-luxury-shine"></div>
+                </a>
+                <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className="px-8 py-3 md:px-10 md:py-4 rounded-full font-bold inline-block w-full md:w-auto text-sm md:text-base border border-white/20 hover:border-brand-gold hover:text-brand-gold transition-all">
+                    Quero o Business White Label
+                </a>
+            </div>
         </div>
       </div>
     </section>
