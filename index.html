@@ -55,8 +55,8 @@
         width: 100vw;
         height: 100vh;
         pointer-events: none;
-        z-index: 1;
-        opacity: 0.18; /* Increased opacity for more visible noise */
+        z-index: 40; /* Increased z-index to overlay main content (z-10) but stay under Navbar (z-50) if needed, or overlay everything */
+        opacity: 0.15;
         background-image: url("https://life360parceiros.com.br/wp-content/uploads/2026/02/ruido-animado-1.gif");
         background-repeat: repeat;
       }
@@ -200,6 +200,7 @@
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>

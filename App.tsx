@@ -1,16 +1,17 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Expert from './components/Expert';
 import BeliefBreaking from './components/BeliefBreaking';
-import Services from './components/Services';
-import Methodology from './components/Methodology';
+import Expert from './components/Expert';
 import PlatformPreview from './components/PlatformPreview';
+import Services from './components/Services';
 import Academy from './components/Academy';
-import Plans from './components/Plans';
-import ContactForm from './components/ContactForm';
+import Methodology from './components/Methodology';
 import TargetAudience from './components/TargetAudience';
+import Testimonials from './components/Testimonials';
+import Plans from './components/Plans';
 import Support from './components/Support';
+import Closing from './components/Closing';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -24,14 +25,15 @@ const App: React.FC = () => {
         <Hero />
         <BeliefBreaking />
         <Expert />
+        <PlatformPreview />
         <Services />
         <Academy />
-        <PlatformPreview />
         <Methodology />
         <TargetAudience />
+        <Testimonials />
         <Plans />
-        <ContactForm />
         <Support />
+        <Closing />
       </main>
       <Footer />
     </div>
