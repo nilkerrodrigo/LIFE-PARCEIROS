@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { UserPlus, BrainCircuit, FileCheck, FileText, DollarSign } from 'lucide-react';
+import { UserPlus, Rocket, Layout, TrendingUp } from 'lucide-react';
 
 const StepCard = ({ number, title, desc, icon, delay }: any) => (
     <motion.div
@@ -25,33 +25,27 @@ const Methodology: React.FC = () => {
   const steps = [
     {
       number: "1",
-      title: "Cadastro do caso",
-      desc: "Você registra os dados essenciais do cliente e o objetivo.",
+      title: "Entrada como parceiro",
+      desc: "Você inicia seu acesso e entende o melhor formato para sua operação.",
       icon: <UserPlus className="w-5 h-5 md:w-6 md:h-6 text-black" />
     },
     {
       number: "2",
-      title: "Diagnóstico CreditIA",
-      desc: "Sem diagnóstico, o fluxo não avança. Você ganha direção.",
-      icon: <BrainCircuit className="w-5 h-5 md:w-6 md:h-6 text-black" />
+      title: "Onboarding e ativação",
+      desc: "Você aprende o fluxo padrão, as etapas e como usar a plataforma com clareza.",
+      icon: <Rocket className="w-5 h-5 md:w-6 md:h-6 text-black" />
     },
     {
       number: "3",
-      title: "Consultas e checklist",
-      desc: "Você confirma dados, organiza documentação e conduz com consistência.",
-      icon: <FileCheck className="w-5 h-5 md:w-6 md:h-6 text-black" />
+      title: "Operação diária",
+      desc: "Você cadastra atendimentos, acompanha etapas, organiza pendências e executa com padrão.",
+      icon: <Layout className="w-5 h-5 md:w-6 md:h-6 text-black" />
     },
     {
       number: "4",
-      title: "Proposta e contrato",
-      desc: "Você acompanha status no pipeline e mantém o cliente informado.",
-      icon: <FileText className="w-5 h-5 md:w-6 md:h-6 text-black" />
-    },
-    {
-      number: "5",
-      title: "Monetização",
-      desc: "Quando o crédito trava, você vende soluções e mantém receita.",
-      icon: <DollarSign className="w-5 h-5 md:w-6 md:h-6 text-black" />
+      title: "Escala com suporte",
+      desc: "Você reduz retrabalho, aumenta consistência e cresce com previsibilidade.",
+      icon: <TrendingUp className="w-5 h-5 md:w-6 md:h-6 text-black" />
     }
   ];
 
@@ -59,29 +53,19 @@ const Methodology: React.FC = () => {
     <section className="py-10 md:py-24 px-6 bg-[#050505]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-2xl md:text-5xl font-bold text-white mb-2 md:mb-4">Simples, padronizado e previsível</h2>
+          <h2 className="text-2xl md:text-5xl font-bold text-white mb-2 md:mb-4">Como funciona na prática</h2>
         </div>
 
-        <div className="flex flex-col items-center gap-6 mt-8 max-w-6xl mx-auto">
-            {/* Top Row: 3 Items */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-                {steps.slice(0, 3).map((step, idx) => (
-                    <StepCard key={idx} {...step} delay={idx * 0.1} />
-                ))}
-            </div>
-
-            {/* Bottom Row: 2 Items (Centered width) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full md:w-2/3">
-                {steps.slice(3, 5).map((step, idx) => (
-                    <StepCard key={idx + 3} {...step} delay={(idx + 3) * 0.1} />
-                ))}
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {steps.map((step, idx) => (
+                <StepCard key={idx} {...step} delay={idx * 0.1} />
+            ))}
         </div>
         
         <div className="mt-8 md:mt-12 text-center">
              <a href="#plans" className="btn-luxury px-6 py-3 md:px-8 md:py-3 rounded-full text-xs md:text-sm font-bold inline-block w-full md:w-auto">
                 <div className="btn-border-container"><div className="btn-border-anim"></div></div>
-                <span className="relative z-10">QUERO OPERAR DESSE JEITO</span>
+                <span className="relative z-10">QUERO COMEÇAR COM ESTRUTURA</span>
                 <div className="btn-luxury-shine"></div>
             </a>
         </div>

@@ -1,16 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BrainCircuit, Search, Briefcase, FileText, Wallet, GraduationCap, Users } from 'lucide-react';
+import { Layout, ClipboardList, LifeBuoy, BookOpen, Layers } from 'lucide-react';
 
-const DeliverableItem = ({ title, desc, icon }: any) => (
-    <div className="flex items-start gap-4 p-5 md:p-6 rounded-xl bg-[#111] border border-white/5 hover:border-brand-gold/30 transition-colors">
-        <div className="mt-1 text-brand-gold shrink-0">
-            {icon}
+const DeliverableItem = ({ title, desc, icon, list }: any) => (
+    <div className="flex flex-col p-6 rounded-xl bg-[#111] border border-white/5 hover:border-brand-gold/30 transition-colors h-full">
+        <div className="flex items-center gap-3 mb-4">
+            <div className="text-brand-gold shrink-0 p-2 bg-brand-gold/10 rounded-lg">
+                {icon}
+            </div>
+            <h3 className="text-white font-bold text-lg">{title}</h3>
         </div>
-        <div>
-            <h3 className="text-white font-bold text-base md:text-lg mb-1 md:mb-2">{title}</h3>
-            <p className="text-gray-400 text-xs md:text-sm leading-relaxed">{desc}</p>
-        </div>
+        <ul className="space-y-2">
+            {list.map((item: string, i: number) => (
+                <li key={i} className="text-gray-400 text-sm leading-relaxed flex items-start gap-2">
+                    <span className="w-1 h-1 bg-gray-500 rounded-full mt-1.5 shrink-0"></span>
+                    {item}
+                </li>
+            ))}
+        </ul>
     </div>
 );
 
@@ -19,44 +26,56 @@ const Academy: React.FC = () => {
     <section id="academy" className="py-10 md:py-24 px-6 bg-black relative border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">A plataforma completa para operar crédito com método</h2>
+            <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">O que você recebe ao entrar para a Life 360 Parceiros</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 md:mb-12">
              <DeliverableItem 
-                icon={<BrainCircuit size={22} className="md:w-6 md:h-6" />}
-                title="Diagnóstico CreditIA"
-                desc="Fluxo estruturado para dar direção e reduzir retrabalho."
+                icon={<Layout size={24} />}
+                title="Plataforma de gestão"
+                list={[
+                    "Cadastro e organização de clientes",
+                    "Pipeline por etapas e status",
+                    "Registro de informações essenciais",
+                    "Controle de pendências",
+                    "Histórico para acompanhamento"
+                ]}
             />
             <DeliverableItem 
-                icon={<Search size={22} className="md:w-6 md:h-6" />}
-                title="Consultas e Análises"
-                desc="Para apoiar decisão (ex: pendências e SCR)."
+                icon={<ClipboardList size={24} />}
+                title="Processos e listas prontas"
+                list={[
+                    "Checklists e roteiros padronizados",
+                    "Listas completas para evitar falhas",
+                    "Padrão de operação consistente"
+                ]}
             />
              <DeliverableItem 
-                icon={<Wallet size={22} className="md:w-6 md:h-6" />}
-                title="Soluções Integradas"
-                desc="Monetize casos travados com Limpa Nome e Rating."
+                icon={<LifeBuoy size={24} />}
+                title="Suporte ao parceiro"
+                list={[
+                    "Orientação operacional para o dia a dia",
+                    "Apoio para ajustar fluxo",
+                    "Canais de suporte dedicados"
+                ]}
             />
              <DeliverableItem 
-                icon={<FileText size={22} className="md:w-6 md:h-6" />}
-                title="Vendas e CRM"
-                desc="Pipeline completo, propostas e contratos."
+                icon={<BookOpen size={24} />}
+                title="Treinamentos e materiais"
+                list={[
+                    "Onboarding para começar certo",
+                    "Materiais para elevar performance",
+                    "Evolução contínua para você e seu time"
+                ]}
             />
              <DeliverableItem 
-                icon={<Briefcase size={22} className="md:w-6 md:h-6" />}
-                title="Carteira e Comissões"
-                desc="Gestão financeira e rede de indicações."
-            />
-             <DeliverableItem 
-                icon={<Users size={22} className="md:w-6 md:h-6" />}
-                title="Gestão de Equipe"
-                desc="Controle de permissões (exclusivo Business)."
-            />
-             <DeliverableItem 
-                icon={<GraduationCap size={22} className="md:w-6 md:h-6" />}
-                title="Universidade Life360"
-                desc="Treinamento e suporte operacional constante."
+                icon={<Layers size={24} />}
+                title="Esteira de soluções"
+                list={[
+                    "Soluções integradas ao ecossistema",
+                    "Caminho organizado para ofertar mais valor",
+                    "Diversificação de oportunidades"
+                ]}
             />
         </div>
         
@@ -65,7 +84,7 @@ const Academy: React.FC = () => {
                 <div className="btn-border-container">
                    <div className="btn-border-anim"></div>
                 </div>
-                <span className="relative z-10">QUERO COMEÇAR COM APOIO DO TIME</span>
+                <span className="relative z-10">QUERO SER PARCEIRO LIFE 360</span>
                 <div className="btn-luxury-shine"></div>
             </a>
         </div>

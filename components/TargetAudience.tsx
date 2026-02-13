@@ -18,10 +18,12 @@ const TargetAudience: React.FC = () => {
                 </h3>
                 <ul className="space-y-3 md:space-y-4">
                     {[
-                        "Quer aprovar mais com processo e direção",
-                        "Quer aumentar conversão e ticket por cliente",
-                        "Quer parar de depender do improviso e organizar a operação",
-                        "Quer crescer com suporte, treinamento e estrutura"
+                        "Atua com reabilitação de crédito e quer mais organização",
+                        "Quer parar de depender de improviso para conduzir atendimentos",
+                        "Quer padronizar execução para melhorar conversão",
+                        "Quer ter controle do que está acontecendo com cada cliente",
+                        "Quer escalar mantendo qualidade e clareza",
+                        "Quer ampliar oportunidades com um ecossistema completo"
                     ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-gray-300 text-sm md:text-base">
                             <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
@@ -29,11 +31,6 @@ const TargetAudience: React.FC = () => {
                         </li>
                     ))}
                 </ul>
-                <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-white/5">
-                    <p className="text-xs md:text-sm text-gray-400 font-medium leading-relaxed">
-                        Perfeito para correspondente e promotor de crédito, consultor financeiro, corretor de imóveis, contador, loja de veículos e profissionais que querem operar crédito com esteira.
-                    </p>
-                </div>
             </div>
 
             {/* Not For Whom */}
@@ -46,9 +43,9 @@ const TargetAudience: React.FC = () => {
                 </h3>
                 <ul className="space-y-3 md:space-y-4">
                     {[
-                        "Quem busca promessa milagrosa",
-                        "Quem não quer seguir processo e checklist",
-                        "Quem não trabalha com ética, transparência e LGPD"
+                        "Quem busca promessa de resultado garantido",
+                        "Quem não quer seguir processo e padrão",
+                        "Quem quer operar sem controle e sem rotina"
                     ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-gray-300 text-sm md:text-base">
                             <X className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
@@ -60,7 +57,7 @@ const TargetAudience: React.FC = () => {
           </div>
           
           <div className="mt-8 md:mt-12 text-center">
-            <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className="text-brand-gold font-bold hover:text-white transition-colors text-sm md:text-base">QUERO FALAR COM UM ESPECIALISTA &rarr;</a>
+            <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className="text-brand-gold font-bold hover:text-white transition-colors text-sm md:text-base">QUERO SABER SE FAZ SENTIDO PARA MIM &rarr;</a>
           </div>
       </div>
     </section>

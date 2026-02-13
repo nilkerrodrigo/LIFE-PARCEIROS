@@ -28,7 +28,6 @@ const Expert: React.FC = () => {
                     <source src="https://life360parceiros.com.br/wp-content/uploads/2026/02/video-life.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
-                {/* Overlay to ensure visual integration */}
                 <div className="absolute inset-0 bg-black/10 pointer-events-none" />
             </div>
         </motion.div>
@@ -39,21 +38,23 @@ const Expert: React.FC = () => {
             viewport={{ once: true }}
             className="w-full md:w-1/2 space-y-6 md:space-y-8 flex flex-col items-center md:items-start text-center md:text-left"
         >
-          <h2 className="text-2xl md:text-5xl font-bold text-white leading-tight">
-            A virada é ter <span className="text-brand-gold">método e processo</span>, não sorte
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            Aqui você não compra crédito e não compra diagnóstico. Você entra em um <span className="text-brand-gold">ecossistema de parceiros.</span>
           </h2>
           
           <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-            A Life 360 Parceiros organiza seu fluxo do diagnóstico até a conclusão.
+            A Life 360 Parceiros é uma plataforma e uma estrutura para quem atua no mercado de reabilitação de crédito e quer operar com padrão e previsibilidade.
+            <br/><br/>
+            Você utiliza recursos internos para organizar o atendimento e qualificar a jornada do cliente, mas o que você adquire é o acesso à plataforma, aos processos e ao suporte.
           </p>
 
           <ul className="space-y-3 md:space-y-4 w-full max-w-lg md:max-w-none text-left">
             {[
-                "Diagnóstico CreditIA para dar direção",
-                "Consultas para embasar a decisão e orientar o próximo passo",
-                "Soluções integradas para aumentar ticket por cliente",
-                "CRM com pipeline, proposta e contrato para manter controle",
-                "Suporte e Universidade Life360 para você evoluir"
+                "Plataforma para organizar e acompanhar atendimentos",
+                "Processos prontos para execução rápida e padronizada",
+                "Suporte operacional para destravar a rotina",
+                "Materiais e treinamentos para evoluir performance",
+                "Esteira de soluções para aumentar ticket e oportunidades"
             ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-brand-gold shrink-0 mt-0.5" />
@@ -65,7 +66,7 @@ const Expert: React.FC = () => {
           <div className="pt-2 md:pt-4 w-full md:w-auto">
             <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className="btn-luxury px-6 py-3 md:px-8 md:py-3 rounded-full text-xs md:text-sm font-bold inline-block w-full md:w-auto text-center">
                 <div className="btn-border-container"><div className="btn-border-anim"></div></div>
-                <span className="relative z-10">QUERO VER A PLATAFORMA POR DENTRO</span>
+                <span className="relative z-10">QUERO VER COMO FUNCIONA POR DENTRO</span>
                 <div className="btn-luxury-shine"></div>
             </a>
           </div>

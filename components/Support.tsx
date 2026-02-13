@@ -38,10 +38,12 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
 
 const Support: React.FC = () => {
   const faqs = [
-      { q: "A Life 360 Parceiros é um banco?", a: "Não. A Life 360 Parceiros oferece estrutura, plataforma e suporte. As operações seguem regras aplicáveis das instituições e parceiros." },
-      { q: "O Diagnóstico CreditIA é necessário?", a: "Sim. Ele faz parte do processo e sem ele a análise não avança." },
-      { q: "Eu posso vender com minha marca?", a: "Sim, no plano Business White Label." },
-      { q: "Preciso ter experiência?", a: "Não necessariamente. Você pode começar do zero desde que siga o processo e use suporte e treinamento." },
+      { q: "A Life 360 Parceiros vende crédito?", a: "Não. A Life 360 Parceiros é uma plataforma e um ecossistema para parceiros que atuam com reabilitação de crédito e querem estrutura, processos e suporte para operar melhor." },
+      { q: "A Life 360 Parceiros vende diagnóstico?", a: "Não. A plataforma pode ter recursos internos para organização e qualificação do atendimento, mas o produto é o acesso à plataforma e à estrutura para parceiros." },
+      { q: "O que eu adquiro ao entrar?", a: "Você adquire acesso à plataforma e ao ecossistema Life 360 Parceiros conforme o plano escolhido, incluindo processos, listas, suporte e materiais disponíveis." },
+      { q: "Preciso ter experiência?", a: "Não necessariamente. Você consegue começar com onboarding e com processos prontos, seguindo o padrão da plataforma." },
+      { q: "Isso serve para quem atende pouco ou muito volume?", a: "Serve para os dois. Quem atende pouco ganha padrão e velocidade. Quem atende muito ganha controle e escala sem bagunça." },
+      { q: "Meus dados ficam seguros?", a: "Sim. Os dados devem ser tratados com sigilo e conforme a LGPD seguindo políticas e boas práticas aplicáveis." },
   ];
 
   return (
@@ -57,21 +59,24 @@ const Support: React.FC = () => {
 
         <div className="mt-8 md:mt-16 text-center">
             <h3 className="text-xl md:text-3xl font-bold text-white mb-4 leading-tight">
-                Chega de improviso. <br className="hidden md:block" />
-                Opere crédito como um especialista.
+                Se você quer resultado em reabilitação de crédito, comece pela estrutura.
             </h3>
             <p className="text-gray-400 mb-8 text-sm md:text-base max-w-2xl mx-auto">
-                Não deixe dinheiro na mesa por falta de processo. Tenha acesso à esteira completa, diagnóstico CreditIA e suporte especializado para fechar mais contratos todos os dias.
+                Você pode continuar operando no manual, apagando incêndio e perdendo follow up.
+                Ou pode operar com plataforma, processos e padrão, e transformar volume em resultado.
             </p>
             
-            <div className="flex justify-center">
+            <div className="flex flex-col items-center justify-center">
                 <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className="btn-luxury px-10 py-4 rounded-full font-bold inline-block w-full md:w-auto text-base md:text-lg">
                     <div className="btn-border-container"><div className="btn-border-anim"></div></div>
                     <span className="relative z-10 flex items-center justify-center gap-2">
-                        QUERO CONHECER <ArrowRight size={20} />
+                        QUERO CONHECER E VIRAR PARCEIRO <ArrowRight size={20} />
                     </span>
                     <div className="btn-luxury-shine"></div>
                 </a>
+                <p className="text-[10px] md:text-xs text-gray-500 mt-4">
+                    Atendimento rápido e sem compromisso.
+                </p>
             </div>
         </div>
       </div>

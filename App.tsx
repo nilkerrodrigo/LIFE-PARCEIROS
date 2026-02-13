@@ -11,7 +11,6 @@ import Testimonials from './components/Testimonials';
 import Plans from './components/Plans';
 import TargetAudience from './components/TargetAudience';
 import Support from './components/Support';
-import About from './components/About';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -25,12 +24,12 @@ const App: React.FC = () => {
         <Hero />
         <BeliefBreaking />
         <Expert />
+        <PlatformPreview />
         <Services />
         <Academy />
         <Methodology />
-        <PlatformPreview />
         <TargetAudience />
-        <About />
+        <Testimonials />
         <Plans />
         <Support />
       </main>
