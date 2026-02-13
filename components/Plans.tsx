@@ -6,7 +6,7 @@ const PlanCard = ({ title, price, description, features, cta, highlight = false,
     return (
         <div className={`relative flex flex-col p-6 md:p-8 rounded-2xl border transition-all duration-300 ${highlight ? 'bg-[#1a1a1a] border-brand-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.1)] scale-100 md:scale-105 z-10' : 'bg-[#101010] border-white/10 hover:border-white/20'}`}>
             {badge && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-gold text-black text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-gold text-black text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg whitespace-nowrap">
                     {badge}
                 </div>
             )}
@@ -65,8 +65,7 @@ const Plans: React.FC = () => {
                     "Acesso completo à plataforma"
                 ]}
                 cta="Começar no Empreendedor"
-                badge="Mais Popular"
-                highlight={true}
+                highlight={false}
             />
 
             <PlanCard 
@@ -81,7 +80,8 @@ const Plans: React.FC = () => {
                     "Acesso prioritário a novos produtos"
                 ]}
                 cta="Quero o Business White Label"
-                highlight={false}
+                badge="Recomendado"
+                highlight={true}
             />
         </div>
 
