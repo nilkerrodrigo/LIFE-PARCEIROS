@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Layout, ClipboardList, LifeBuoy, BookOpen, Layers } from 'lucide-react';
 
 const DeliverableItem = ({ title, desc, icon, list }: any) => (
-    <div className="flex flex-col p-6 rounded-xl bg-[#111] border border-white/5 hover:border-brand-gold/30 transition-colors h-full">
+    <div className="flex flex-col p-6 rounded-xl bg-[#111] border border-white/5 hover:border-brand-gold/30 transition-colors h-full w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.33%-1rem)]">
         <div className="flex items-center gap-3 mb-4">
             <div className="text-brand-gold shrink-0 p-2 bg-brand-gold/10 rounded-lg">
                 {icon}
@@ -29,7 +29,8 @@ const Academy: React.FC = () => {
             <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">O que você recebe ao entrar para a Life 360 Parceiros</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 md:mb-12">
+        {/* Changed to Flex wrap to center last items */}
+        <div className="flex flex-wrap justify-center gap-6 mb-8 md:mb-12">
              <DeliverableItem 
                 icon={<Layout size={24} />}
                 title="Plataforma de gestão"

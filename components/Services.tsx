@@ -16,7 +16,7 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ title, description, icon, del
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
-      className="group bg-[#151515] p-6 md:p-8 rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all duration-300 hover:-translate-y-2 h-full"
+      className="group bg-[#151515] p-6 md:p-8 rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all duration-300 hover:-translate-y-2 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1rem)]"
     >
       <div className="mb-4 md:mb-6 p-3 md:p-4 bg-black rounded-lg w-fit text-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.1)]">
         {icon}
@@ -73,7 +73,8 @@ const Services: React.FC = () => {
           <h2 className="mt-3 md:mt-4 text-2xl md:text-5xl font-bold text-white">O que muda na prática</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 justify-center">
+        {/* Changed from Grid to Flex to center the last items */}
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
           {benefits.map((item, index) => (
             <BenefitCard 
               key={item.title} 

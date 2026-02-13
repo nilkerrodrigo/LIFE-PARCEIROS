@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Star, Briefcase } from 'lucide-react';
+import { Check, Star, Briefcase, Users } from 'lucide-react';
 
 const PlanCard = ({ title, price, description, features, cta, highlight = false, badge = "" }: any) => {
     return (
@@ -48,9 +48,30 @@ const Plans: React.FC = () => {
   return (
     <section id="plans" className="py-10 md:py-24 px-6 bg-[#050505] relative">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-8 md:mb-16">
+        <div className="text-center mb-8">
             <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">Escolha o plano certo para sua fase</h2>
             <p className="text-gray-400 text-sm md:text-base">Valide rápido ou escale com marca própria.</p>
+        </div>
+
+        {/* Network Section - Moved UP and Highlighted */}
+        <div className="mb-12 md:mb-16">
+            <div className="bg-gradient-to-r from-[#101010] via-[#1a1a1a] to-[#101010] p-6 md:p-8 rounded-2xl border border-brand-gold/30 shadow-[0_0_30px_rgba(212,175,55,0.08)] max-w-4xl mx-auto text-center relative overflow-hidden">
+                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-50"></div>
+                 
+                 <div className="flex flex-col items-center justify-center gap-3 mb-4">
+                     <div className="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold mb-1">
+                        <Users size={24} />
+                     </div>
+                     <h4 className="text-xl md:text-2xl font-bold text-white flex items-center justify-center gap-2">
+                        Rede de Indicações Estruturada
+                     </h4>
+                 </div>
+                 
+                 <p className="text-sm md:text-base text-gray-300 leading-relaxed max-w-2xl mx-auto">
+                    Cadastre indicadores para trazer oportunidades e gerencie tudo na plataforma. 
+                    <span className="text-brand-gold font-medium"> Foco em processo:</span> indicação entra, vira lead, vai para pipeline e contrato. Transparência total com comissões registradas.
+                 </p>
+            </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center">
@@ -92,16 +113,6 @@ const Plans: React.FC = () => {
                 <div className="hidden md:block w-px bg-white/10"></div>
                 <p className="flex-1">👉 Se você já vende crédito, quer marca própria e pretende colocar time para rodar, vá de <strong>Business White Label</strong>.</p>
              </div>
-        </div>
-
-        {/* Network Section */}
-        <div className="mt-8 md:mt-16 text-center max-w-2xl mx-auto">
-             <h4 className="text-white font-bold mb-2 flex items-center justify-center gap-2">
-                <Briefcase size={18} className="text-brand-gold" /> Rede de Indicações Estruturada
-             </h4>
-             <p className="text-xs md:text-sm text-gray-500">
-                Cadastre indicadores para trazer oportunidades e gerencie tudo na plataforma. Foco em processo: indicação entra, vira lead, vai para pipeline e contrato. Transparência total com comissões registradas.
-             </p>
         </div>
 
       </div>

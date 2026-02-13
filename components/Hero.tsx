@@ -22,7 +22,8 @@ const Hero: React.FC = () => {
             <span className="text-gray-400">Há 7 anos no mercado</span>
           </div>
 
-          <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.15] md:leading-[1.1]">
+          {/* Tamanho da fonte reduzido aqui */}
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15] md:leading-[1.1]">
             O ecossistema ideal para aumentar os seus resultados no <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#FFFACD] to-[#D4AF37] bg-[length:200%_auto] animate-text-shine">mercado de reabilitação de crédito.</span>
           </h1>
           

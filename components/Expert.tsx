@@ -39,14 +39,19 @@ const Expert: React.FC = () => {
             className="w-full md:w-1/2 space-y-6 md:space-y-8 flex flex-col items-center md:items-start text-center md:text-left"
         >
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-            Aqui você não compra crédito e não compra diagnóstico. Você entra em um <span className="text-brand-gold">ecossistema de parceiros.</span>
+            Sua operação de reabilitação de crédito em um só lugar, com <span className="text-brand-gold">método e estrutura.</span>
           </h2>
           
-          <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-            A Life 360 Parceiros é uma plataforma e uma estrutura para quem atua no mercado de reabilitação de crédito e quer operar com padrão e previsibilidade.
-            <br/><br/>
-            Você utiliza recursos internos para organizar o atendimento e qualificar a jornada do cliente, mas o que você adquire é o acesso à plataforma, aos processos e ao suporte.
-          </p>
+          <div className="text-gray-300 text-base md:text-lg leading-relaxed space-y-4">
+            <p>
+                A Life 360 Parceiros é uma plataforma para parceiros que querem organizar a rotina, padronizar a execução e acompanhar cada atendimento com clareza do início ao fim.
+                <br />
+                Você centraliza informações, reduz retrabalho e ganha previsibilidade para escalar com consistência.
+            </p>
+            <p className="font-medium text-white">
+                Você adquire acesso à plataforma, aos processos e ao suporte do ecossistema Life 360.
+            </p>
+          </div>
 
           <ul className="space-y-3 md:space-y-4 w-full max-w-lg md:max-w-none text-left">
             {[
