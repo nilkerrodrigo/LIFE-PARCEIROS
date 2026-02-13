@@ -2,10 +2,12 @@ import React from 'react';
 import { Check, X } from 'lucide-react';
 
 const TargetAudience: React.FC = () => {
+  const whatsappLink = "https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6";
+  
   return (
-    <section className="py-10 md:py-24 px-6 bg-black">
+    <section className="py-16 md:py-24 px-6 bg-black">
       <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-5xl font-bold text-white text-center mb-8 md:mb-16">A Life 360 Parceiros é para você que</h2>
+          <h2 className="text-2xl md:text-5xl font-bold text-white text-center mb-10 md:mb-16">A Life 360 Parceiros é para você que</h2>
           
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* For Whom */}
@@ -18,12 +20,10 @@ const TargetAudience: React.FC = () => {
                 </h3>
                 <ul className="space-y-3 md:space-y-4">
                     {[
-                        "Atua com reabilitação de crédito e quer mais organização",
-                        "Quer parar de depender de improviso para conduzir atendimentos",
-                        "Quer padronizar execução para melhorar conversão",
-                        "Quer ter controle do que está acontecendo com cada cliente",
-                        "Quer escalar mantendo qualidade e clareza",
-                        "Quer ampliar oportunidades com um ecossistema completo"
+                        "Quer aprovar mais com processo e direção",
+                        "Quer aumentar conversão e ticket por cliente",
+                        "Quer parar de depender do improviso e organizar a operação",
+                        "Quer crescer com suporte, treinamento e estrutura"
                     ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-gray-300 text-sm md:text-base">
                             <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
@@ -31,6 +31,11 @@ const TargetAudience: React.FC = () => {
                         </li>
                     ))}
                 </ul>
+                <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-white/5">
+                    <p className="text-xs md:text-sm text-gray-400 font-medium leading-relaxed">
+                        Perfeito para correspondente e promotor de crédito, consultor financeiro, corretor de imóveis, contador, loja de veículos e profissionais que querem operar crédito com esteira.
+                    </p>
+                </div>
             </div>
 
             {/* Not For Whom */}
@@ -43,9 +48,9 @@ const TargetAudience: React.FC = () => {
                 </h3>
                 <ul className="space-y-3 md:space-y-4">
                     {[
-                        "Quem busca promessa de resultado garantido",
-                        "Quem não quer seguir processo e padrão",
-                        "Quem quer operar sem controle e sem rotina"
+                        "Quem busca promessa milagrosa",
+                        "Quem não quer seguir processo e checklist",
+                        "Quem não trabalha com ética, transparência e LGPD"
                     ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-gray-300 text-sm md:text-base">
                             <X className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
@@ -56,8 +61,8 @@ const TargetAudience: React.FC = () => {
             </div>
           </div>
           
-          <div className="mt-8 md:mt-12 text-center">
-            <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className="text-brand-gold font-bold hover:text-white transition-colors text-sm md:text-base">QUERO SABER SE FAZ SENTIDO PARA MIM &rarr;</a>
+          <div className="mt-10 md:mt-12 text-center">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="text-brand-gold font-bold hover:text-white transition-colors text-sm md:text-base">QUERO FALAR COM UM ESPECIALISTA &rarr;</a>
           </div>
       </div>
     </section>

@@ -7,8 +7,8 @@ import Services from './components/Services';
 import Methodology from './components/Methodology';
 import PlatformPreview from './components/PlatformPreview';
 import Academy from './components/Academy';
-import Testimonials from './components/Testimonials';
 import Plans from './components/Plans';
+import ContactForm from './components/ContactForm';
 import TargetAudience from './components/TargetAudience';
 import Support from './components/Support';
 import Footer from './components/Footer';
@@ -24,13 +24,13 @@ const App: React.FC = () => {
         <Hero />
         <BeliefBreaking />
         <Expert />
-        <PlatformPreview />
         <Services />
         <Academy />
+        <PlatformPreview />
         <Methodology />
         <TargetAudience />
-        <Testimonials />
         <Plans />
+        <ContactForm />
         <Support />
       </main>
       <Footer />
