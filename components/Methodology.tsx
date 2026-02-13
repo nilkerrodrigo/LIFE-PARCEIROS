@@ -56,9 +56,9 @@ const Methodology: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 px-6 bg-[#050505]">
+    <section className="py-10 md:py-24 px-6 bg-[#050505]">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <h2 className="text-2xl md:text-5xl font-bold text-white mb-2 md:mb-4">Simples, padronizado e previsível</h2>
         </div>
 
@@ -78,7 +78,7 @@ const Methodology: React.FC = () => {
             </div>
         </div>
         
-        <div className="mt-10 md:mt-12 text-center">
+        <div className="mt-8 md:mt-12 text-center">
              <a href="#plans" className="btn-luxury px-6 py-3 md:px-8 md:py-3 rounded-full text-xs md:text-sm font-bold inline-block w-full md:w-auto">
                 <div className="btn-border-container"><div className="btn-border-anim"></div></div>
                 <span className="relative z-10">QUERO OPERAR DESSE JEITO</span>

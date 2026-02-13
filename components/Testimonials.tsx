@@ -4,7 +4,7 @@ import { CheckCircle2 } from 'lucide-react';
 
 const Testimonials: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 px-6 bg-black border-t border-white/5">
+    <section className="py-10 md:py-24 px-6 bg-black border-t border-white/5">
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 md:mb-6">
           Por que isso funciona tão bem

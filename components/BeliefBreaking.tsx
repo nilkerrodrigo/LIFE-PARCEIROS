@@ -4,9 +4,9 @@ import { AlertTriangle, XCircle, ArrowDown } from 'lucide-react';
 
 const BeliefBreaking: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 px-6 bg-neutral-900/30 border-y border-white/5">
+    <section className="py-10 md:py-24 px-6 bg-neutral-900/30 border-y border-white/5">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-10 md:mb-16">
+        <div className="text-center mb-8 md:mb-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ const BeliefBreaking: React.FC = () => {
             </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-10 md:mb-12">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
             {[
                 "Você perde venda quando o cliente é negado e não tem um caminho claro",
                 "Você perde tempo com documento, pendência, análise e follow-up",

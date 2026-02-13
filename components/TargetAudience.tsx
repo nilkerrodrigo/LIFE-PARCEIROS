@@ -3,9 +3,9 @@ import { Check, X } from 'lucide-react';
 
 const TargetAudience: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 px-6 bg-black">
+    <section className="py-10 md:py-24 px-6 bg-black">
       <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-5xl font-bold text-white text-center mb-10 md:mb-16">A Life 360 Parceiros é para você que</h2>
+          <h2 className="text-2xl md:text-5xl font-bold text-white text-center mb-8 md:mb-16">A Life 360 Parceiros é para você que</h2>
           
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* For Whom */}
@@ -59,7 +59,7 @@ const TargetAudience: React.FC = () => {
             </div>
           </div>
           
-          <div className="mt-10 md:mt-12 text-center">
+          <div className="mt-8 md:mt-12 text-center">
             <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className="text-brand-gold font-bold hover:text-white transition-colors text-sm md:text-base">QUERO FALAR COM UM ESPECIALISTA &rarr;</a>
           </div>
       </div>

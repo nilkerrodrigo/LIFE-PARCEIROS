@@ -27,9 +27,9 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section id="contact-form" className="py-16 md:py-24 px-6 bg-[#050505] relative overflow-hidden border-t border-white/5">
+    <section id="contact-form" className="py-10 md:py-24 px-6 bg-[#050505] relative overflow-hidden border-t border-white/5">
       <div className="max-w-4xl mx-auto relative z-10">
-        <div className="text-center mb-10 md:mb-12">
+        <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">Solicite acesso e comece do jeito certo</h2>
             <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">Preencha os dados e um especialista te orienta no melhor plano para a sua fase. Tempo médio: 1 minuto.</p>
         </div>

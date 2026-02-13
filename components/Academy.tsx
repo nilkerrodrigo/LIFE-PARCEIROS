@@ -16,17 +16,17 @@ const DeliverableItem = ({ title, desc, icon }: any) => (
 
 const Academy: React.FC = () => {
   return (
-    <section id="academy" className="py-16 md:py-24 px-6 bg-black relative border-t border-white/5">
+    <section id="academy" className="py-10 md:py-24 px-6 bg-black relative border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10 md:mb-16">
+        <div className="text-center mb-8 md:mb-16">
             <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">A plataforma completa para operar crédito com método</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-10 md:mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
              <DeliverableItem 
                 icon={<BrainCircuit size={22} className="md:w-6 md:h-6" />}
                 title="Diagnóstico CreditIA"
-                desc="Fluxo obrigatório para dar direção e reduzir retrabalho."
+                desc="Fluxo estruturado para dar direção e reduzir retrabalho."
             />
             <DeliverableItem 
                 icon={<Search size={22} className="md:w-6 md:h-6" />}

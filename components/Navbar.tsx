@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
           : 'bg-transparent py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-center">
         <div className="flex items-center gap-2 cursor-pointer">
             <img 
               src="https://life360parceiros.com.br/wp-content/uploads/2026/02/versao-1-dourada.png" 

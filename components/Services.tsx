@@ -35,7 +35,7 @@ const Services: React.FC = () => {
   const benefits = [
     { 
         title: 'Mais consistência', 
-        desc: 'Diagnóstico obrigatório e checklist ajudam você a conduzir com padrão.', 
+        desc: 'Diagnóstico e checklist ajudam você a conduzir com padrão.', 
         icon: <Target className="w-6 h-6 md:w-7 md:h-7" /> 
     },
     { 
@@ -56,13 +56,13 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-16 md:py-24 px-6 bg-black">
+    <section id="services" className="py-10 md:py-24 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-10 md:mb-16 text-center"
+          className="mb-8 md:mb-16 text-center"
         >
           <span className="text-brand-gold font-medium uppercase tracking-widest text-xs md:text-sm">BENEFÍCIOS</span>
           <h2 className="mt-3 md:mt-4 text-2xl md:text-5xl font-bold text-white">O que você ganha na prática</h2>
@@ -80,7 +80,7 @@ const Services: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-10 md:mt-12 text-center">
+        <div className="mt-8 md:mt-12 text-center">
             <a href="#plans" className="text-white text-sm md:text-base border-b border-gray-600 hover:text-brand-gold hover:border-brand-gold transition-colors pb-1">
                 Quero conhecer os planos
             </a>

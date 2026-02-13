@@ -5,11 +5,13 @@ import Expert from './components/Expert';
 import BeliefBreaking from './components/BeliefBreaking';
 import Services from './components/Services';
 import Methodology from './components/Methodology';
+import PlatformPreview from './components/PlatformPreview';
 import Academy from './components/Academy';
 import Testimonials from './components/Testimonials';
 import Plans from './components/Plans';
 import TargetAudience from './components/TargetAudience';
 import Support from './components/Support';
+import About from './components/About';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -26,7 +28,9 @@ const App: React.FC = () => {
         <Services />
         <Academy />
         <Methodology />
+        <PlatformPreview />
         <TargetAudience />
+        <About />
         <Plans />
         <Support />
       </main>

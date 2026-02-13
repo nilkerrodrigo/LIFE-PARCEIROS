@@ -29,7 +29,7 @@ const PlanCard = ({ title, price, description, features, cta, highlight = false,
                 ))}
             </ul>
 
-            <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className={`w-full py-3 rounded-xl font-bold text-center text-sm transition-all ${highlight ? 'btn-luxury text-white' : 'bg-white/10 text-white hover:bg-white/20'}`}>
+            <a href="https://chat.whatsapp.com/G720XYiM1I2HMMB20nMwX6" target="_blank" rel="noopener noreferrer" className={`w-full py-3 rounded-xl font-bold text-center text-sm transition-all whitespace-nowrap ${highlight ? 'btn-luxury text-white' : 'bg-transparent border border-white/20 text-white hover:border-brand-gold hover:text-brand-gold'}`}>
                 {highlight ? (
                     <>
                         <div className="btn-border-container"><div className="btn-border-anim"></div></div>
@@ -46,9 +46,9 @@ const PlanCard = ({ title, price, description, features, cta, highlight = false,
 
 const Plans: React.FC = () => {
   return (
-    <section id="plans" className="py-16 md:py-24 px-6 bg-[#050505] relative">
+    <section id="plans" className="py-10 md:py-24 px-6 bg-[#050505] relative">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 md:mb-16">
             <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">Escolha o plano certo para sua fase</h2>
             <p className="text-gray-400 text-sm md:text-base">Valide rápido ou escale com marca própria.</p>
         </div>
@@ -65,7 +65,8 @@ const Plans: React.FC = () => {
                     "Acesso completo à plataforma"
                 ]}
                 cta="Começar no Empreendedor"
-                highlight={false}
+                badge="Mais Popular"
+                highlight={true}
             />
 
             <PlanCard 
@@ -80,12 +81,11 @@ const Plans: React.FC = () => {
                     "Acesso prioritário a novos produtos"
                 ]}
                 cta="Quero o Business White Label"
-                badge="Recomendado"
-                highlight={true}
+                highlight={false}
             />
         </div>
 
-        <div className="mt-12 md:mt-16 bg-[#101010] p-6 md:p-8 rounded-2xl border border-white/5 text-center max-w-3xl mx-auto">
+        <div className="mt-8 md:mt-16 bg-[#101010] p-6 md:p-8 rounded-2xl border border-white/5 text-center max-w-3xl mx-auto">
              <h4 className="text-lg font-bold text-white mb-2">Regra simples de decisão</h4>
              <div className="flex flex-col md:flex-row gap-6 justify-center mt-4 text-sm text-gray-400">
                 <p className="flex-1">👉 Se você está começando ou quer validar a operação com baixo custo, vá de <strong>Empreendedor</strong>.</p>
@@ -95,7 +95,7 @@ const Plans: React.FC = () => {
         </div>
 
         {/* Network Section */}
-        <div className="mt-12 md:mt-16 text-center max-w-2xl mx-auto">
+        <div className="mt-8 md:mt-16 text-center max-w-2xl mx-auto">
              <h4 className="text-white font-bold mb-2 flex items-center justify-center gap-2">
                 <Briefcase size={18} className="text-brand-gold" /> Rede de Indicações Estruturada
              </h4>
