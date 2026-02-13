@@ -15,10 +15,11 @@ const Hero: React.FC = () => {
         className="w-full max-w-5xl text-center space-y-8 z-10"
       >
         <div className="space-y-6">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 text-gray-400 text-xs md:text-sm font-medium tracking-wide uppercase">
-            <span>Listas 100% concluídas e entregues</span>
-            <span className="hidden md:inline text-brand-gold">•</span>
-            <span>Há 7 anos no mercado</span>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 text-xs md:text-sm font-medium tracking-wide uppercase">
+            <span className="px-4 py-1.5 border border-brand-gold/40 rounded-full text-brand-gold bg-brand-gold/5 shadow-[0_0_15px_rgba(212,175,55,0.1)] backdrop-blur-sm">
+              Listas 100% concluídas e entregues
+            </span>
+            <span className="text-gray-400">Há 7 anos no mercado</span>
           </div>
 
           <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.15] md:leading-[1.1]">
