@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Users } from 'lucide-react';
+import { Check, Star, Briefcase } from 'lucide-react';
 
-const PlanCard = ({ title, price, description, features, cta, link, highlight = false, badge = "" }: any) => {
+const PlanCard = ({ title, price, description, features, cta, href, highlight = false, badge = "" }: any) => {
     return (
         <div className={`relative flex flex-col p-6 md:p-8 rounded-2xl border transition-all duration-300 ${highlight ? 'bg-[#1a1a1a] border-brand-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.1)] scale-100 md:scale-105 z-10' : 'bg-[#101010] border-white/10 hover:border-white/20'}`}>
             {badge && (
@@ -29,7 +29,7 @@ const PlanCard = ({ title, price, description, features, cta, link, highlight = 
                 ))}
             </ul>
 
-            <a href={link} target="_blank" rel="noopener noreferrer" className={`w-full py-3 rounded-xl font-bold text-center text-sm transition-all ${highlight ? 'bg-brand-gold text-black hover:bg-white' : 'bg-white/10 text-white hover:bg-white/20'}`}>
+            <a href={href} target="_blank" rel="noopener noreferrer" className={`w-full py-3 rounded-xl font-bold text-center text-sm transition-all ${highlight ? 'bg-brand-gold text-black hover:bg-white' : 'bg-white/10 text-white hover:bg-white/20'}`}>
                 {cta}
             </a>
         </div>
@@ -37,15 +37,27 @@ const PlanCard = ({ title, price, description, features, cta, link, highlight = 
 };
 
 const Plans: React.FC = () => {
-  const linkEmpreendedor = "https://app.monetizze.com.br/checkout/DEF372866";
-  const linkBusiness = "https://app.monetizze.com.br/checkout/DDM372908";
-
   return (
     <section id="plans" className="py-16 md:py-24 px-6 bg-[#050505] relative">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-10 md:mb-12">
             <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">Escolha o plano certo para sua fase</h2>
             <p className="text-gray-400 text-sm md:text-base">Valide rápido ou escale com marca própria.</p>
+        </div>
+
+        {/* Network Section - Highlighted and Moved Up */}
+        <div className="mb-12 md:mb-16 max-w-3xl mx-auto transform hover:scale-[1.01] transition-transform duration-300">
+             <div className="bg-[#0f0f0f] p-6 md:p-8 rounded-2xl border border-brand-gold/30 shadow-[0_0_30px_rgba(212,175,55,0.08)] text-center relative overflow-hidden">
+                 <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-50"></div>
+                 <h4 className="text-lg md:text-2xl font-bold text-white mb-3 flex items-center justify-center gap-3">
+                    <Briefcase className="text-brand-gold w-6 h-6" /> 
+                    <span className="text-brand-gold">Rede de Indicações Estruturada</span>
+                 </h4>
+                 <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+                    Cadastre indicadores para trazer oportunidades e gerencie tudo na plataforma. 
+                    <span className="block mt-2 text-gray-300">Foco em processo: indicação entra, vira lead, vai para pipeline e contrato. Transparência total com comissões registradas.</span>
+                 </p>
+             </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -56,12 +68,12 @@ const Plans: React.FC = () => {
                 features={[
                     "Operação com a estrutura Life360",
                     "Ideal para validar, aprender e ganhar ritmo",
-                    "Suporte e treinamento para executar com padrão"
+                    "Suporte e treinamento para executar com padrão",
+                    "Acesso completo à plataforma"
                 ]}
                 cta="Começar no Empreendedor"
-                link={linkEmpreendedor}
-                badge="Mais Popular"
-                highlight={true}
+                href="https://app.monetizze.com.br/checkout/DEF372866"
+                highlight={false}
             />
 
             <PlanCard 
@@ -71,10 +83,13 @@ const Plans: React.FC = () => {
                 features={[
                     "White Label com sua marca",
                     "Gestão de equipe e permissões",
-                    "Ideal para quem já tem base de clientes e quer crescimento estruturado"
+                    "Ideal para quem já tem base de clientes",
+                    "Estrutura para crescimento estruturado"
                 ]}
                 cta="Quero o Business White Label"
-                link={linkBusiness}
+                href="https://app.monetizze.com.br/checkout/DDM372908"
+                badge="Recomendado"
+                highlight={true}
             />
         </div>
 
@@ -86,16 +101,6 @@ const Plans: React.FC = () => {
                 <p className="flex-1">👉 Se você já vende crédito, quer marca própria e pretende colocar time para rodar, vá de <strong>Business White Label</strong>.</p>
              </div>
         </div>
-
-        <div className="mt-12 md:mt-16 text-center max-w-2xl mx-auto">
-             <h4 className="text-white font-bold mb-2 flex items-center justify-center gap-2">
-                <Users size={18} className="text-brand-gold" /> Rede de Indicações Estruturada
-             </h4>
-             <p className="text-xs md:text-sm text-gray-500">
-                Cadastre indicadores para trazer oportunidades e gerencie tudo na plataforma. Foco em processo: indicação entra, vira lead, vai para pipeline e contrato. Transparência total com comissões registradas.
-             </p>
-        </div>
-
       </div>
     </section>
   );

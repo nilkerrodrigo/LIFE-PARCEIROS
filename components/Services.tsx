@@ -1,88 +1,71 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, TrendingUp, ShieldCheck, LayoutDashboard } from 'lucide-react';
-
-interface BenefitCardProps {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  delay: number;
-}
-
-const BenefitCard: React.FC<BenefitCardProps> = ({ title, description, icon, delay }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay, duration: 0.5 }}
-      className="group bg-[#151515] p-6 md:p-8 rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all duration-300 hover:-translate-y-2"
-    >
-      <div className="mb-4 md:mb-6 p-3 md:p-4 bg-black rounded-lg w-fit text-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.1)]">
-        {icon}
-      </div>
-      <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 group-hover:text-brand-gold transition-colors">
-        {title}
-      </h3>
-      <p className="text-gray-400 text-sm leading-relaxed">
-        {description}
-      </p>
-    </motion.div>
-  );
-};
+import { LayoutDashboard, Zap, MousePointerClick, TrendingUp, Users } from 'lucide-react';
 
 const Services: React.FC = () => {
   const benefits = [
     { 
-        title: 'Mais consistência', 
-        desc: 'Diagnóstico obrigatório e checklist ajudam você a conduzir com padrão.', 
-        icon: <Target className="w-6 h-6 md:w-7 md:h-7" /> 
+        title: 'Mais controle da operação', 
+        desc: 'Você enxerga cada atendimento por etapa e sabe o que falta para avançar.', 
+        icon: <LayoutDashboard className="w-6 h-6" /> 
     },
     { 
-        title: 'Mais receita', 
-        desc: 'Consultas e soluções integradas aumentam seu ticket com clareza de oferta.', 
-        icon: <TrendingUp className="w-6 h-6 md:w-7 md:h-7" /> 
+        title: 'Mais velocidade no atendimento', 
+        desc: 'Processos e listas prontas reduzem idas e vindas e eliminam improviso.', 
+        icon: <Zap className="w-6 h-6" /> 
     },
     { 
-        title: 'Menos caos', 
-        desc: 'Pipeline, status e histórico para acompanhar tudo sem se perder.', 
-        icon: <LayoutDashboard className="w-6 h-6 md:w-7 md:h-7" /> 
+        title: 'Mais conversão com padrão', 
+        desc: 'Quando o fluxo é consistente, o cliente avança mais rápido e com mais clareza.', 
+        icon: <MousePointerClick className="w-6 h-6" /> 
     },
     { 
-        title: 'Mais confiança', 
-        desc: 'Processo transparente e posicionamento correto para proteger sua reputação.', 
-        icon: <ShieldCheck className="w-6 h-6 md:w-7 md:h-7" /> 
+        title: 'Mais escala sem perder qualidade', 
+        desc: 'Você cresce com processo e mantém o padrão mesmo aumentando volume.', 
+        icon: <TrendingUp className="w-6 h-6" /> 
+    },
+    { 
+        title: 'Mais resultado por cliente', 
+        desc: 'Com uma esteira de soluções, você amplia as oportunidades dentro do mesmo atendimento.', 
+        icon: <Users className="w-6 h-6" /> 
     },
   ];
 
   return (
-    <section id="services" className="py-16 md:py-24 px-6 bg-black">
+    <section className="py-20 md:py-28 px-6 bg-[#050505]">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-10 md:mb-16 text-center"
+          className="mb-12 md:mb-16 text-center"
         >
-          <span className="text-brand-gold font-medium uppercase tracking-widest text-xs md:text-sm">BENEFÍCIOS</span>
-          <h2 className="mt-3 md:mt-4 text-2xl md:text-5xl font-bold text-white">O que você ganha na prática</h2>
+          <span className="text-brand-gold font-bold uppercase tracking-widest text-xs">BENEFÍCIOS</span>
+          <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white">O que muda na prática</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {benefits.map((item, index) => (
-            <BenefitCard 
-              key={item.title} 
-              title={item.title} 
-              description={item.desc}
-              icon={item.icon} 
-              delay={index * 0.1}
-            />
+             <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-[#111] p-8 rounded-2xl border border-white/5 hover:border-brand-gold/30 transition-all duration-300 group w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] flex flex-col"
+             >
+                <div className="w-12 h-12 bg-[#1a1a1a] rounded-lg flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-black transition-colors shrink-0">
+                    {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+             </motion.div>
           ))}
         </div>
 
-        <div className="mt-10 md:mt-12 text-center">
-            <a href="#plans" className="text-white text-sm md:text-base border-b border-gray-600 hover:text-brand-gold hover:border-brand-gold transition-colors pb-1">
-                Quero conhecer os planos
+        <div className="mt-16 text-center">
+            <a href="#plans" className="text-gray-300 text-sm hover:text-white border-b border-gray-600 hover:border-white pb-1 transition-all">
+                Quero conhecer os planos e a estrutura
             </a>
         </div>
       </div>

@@ -4,31 +4,36 @@ import { AlertTriangle, XCircle, ArrowDown } from 'lucide-react';
 
 const BeliefBreaking: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 px-6 bg-neutral-900/30 border-y border-white/5">
+    <section className="py-20 md:py-28 px-6 bg-[#080808] border-y border-white/5 relative">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-10 md:mb-16">
+        <div className="text-center mb-12 md:mb-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-2 bg-red-900/20 border border-red-500/20 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-red-500 text-xs md:text-sm font-semibold mb-4 md:mb-6"
+                className="inline-flex items-center gap-2 bg-red-900/10 border border-red-500/20 px-3 py-1.5 rounded-full text-red-500 text-xs font-bold uppercase tracking-wider mb-6"
             >
-                <AlertTriangle size={14} className="md:w-4 md:h-4" />
-                <span>IDENTIFICAÇÃO</span>
+                <AlertTriangle size={14} />
+                <span>Problema Real</span>
             </motion.div>
             
-            <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">
-                Se você vende crédito, provavelmente já vive isso
+            <h2 className="text-2xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                O que mais trava resultado em reabilitação de crédito não é esforço. <span className="text-white underline decoration-red-600/50 underline-offset-4">É falta de estrutura.</span>
             </h2>
+            
+            <p className="text-gray-400 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+                Quando a operação depende de anotações, mensagens soltas e um processo diferente para cada cliente, você perde tempo, perde padrão e perde conversão. E no final o volume não vira resultado.
+            </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-10 md:mb-12">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-12 md:mb-16">
             {[
-                "Você perde venda quando o cliente é negado e não tem um caminho claro",
-                "Você perde tempo com documento, pendência, análise e follow-up",
-                "Você fica refém de poucas opções e a operação trava quando algo muda",
-                "Você resolve problema do cliente, mas não tem uma esteira para monetizar direito",
-                "Você sente o peso da confiança, porque esse mercado é sensível a golpes"
+                "Atendimento sem padrão e sem checklist",
+                "Informações espalhadas e follow up perdido",
+                "Retrabalho por falta de organização de documentos e etapas",
+                "Dificuldade para acompanhar o que está pendente e o que vem depois",
+                "Falta de controle para escalar sem virar bagunça",
+                "Time sem treinamento contínuo e execução inconsistente"
             ].map((pain, idx) => (
                 <motion.div 
                     key={idx}
@@ -36,12 +41,12 @@ const BeliefBreaking: React.FC = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className={`flex items-start gap-4 p-5 md:p-6 bg-black border border-white/5 rounded-xl hover:border-red-900/50 transition-colors ${idx === 4 ? 'md:col-span-2' : ''}`}
+                    className="flex items-start gap-4 p-5 md:p-6 bg-[#0f0f0f] border border-white/5 rounded-xl hover:border-red-900/30 transition-colors group"
                 >
-                    <div className="mt-1">
-                        <XCircle className="text-red-600 w-5 h-5 md:w-6 md:h-6 shrink-0" />
+                    <div className="mt-1 group-hover:scale-110 transition-transform duration-300">
+                        <XCircle className="text-red-600 w-5 h-5" />
                     </div>
-                    <p className="text-gray-300 text-sm md:text-lg">{pain}</p>
+                    <p className="text-gray-300 text-sm md:text-base">{pain}</p>
                 </motion.div>
             ))}
         </div>
@@ -50,14 +55,14 @@ const BeliefBreaking: React.FC = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center space-y-6 md:space-y-8"
+            className="text-center space-y-8"
         >
-            <h3 className="text-xl md:text-2xl font-bold text-white px-4">
-                No fim, você trabalha muito e fecha menos do que poderia.
+            <h3 className="text-lg md:text-2xl font-bold text-white px-4">
+                A reabilitação de crédito cresce de verdade quando você tem processo, controle e consistência.
             </h3>
             
-            <a href="#plans" className="inline-flex items-center gap-2 text-brand-gold font-bold uppercase tracking-wider hover:text-white transition-colors text-sm md:text-base">
-                Quero operar com uma esteira pronta <ArrowDown size={16} className="md:w-[18px]" />
+            <a href="#plans" className="inline-flex items-center gap-2 text-brand-gold font-bold uppercase tracking-wider hover:text-white transition-colors text-xs md:text-sm">
+                QUERO ORGANIZAR MINHA OPERAÇÃO <ArrowDown size={14} />
             </a>
         </motion.div>
       </div>

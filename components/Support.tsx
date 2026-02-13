@@ -37,41 +37,24 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
 };
 
 const Support: React.FC = () => {
-  const linkEmpreendedor = "https://app.monetizze.com.br/checkout/DEF372866";
-  const linkBusiness = "https://app.monetizze.com.br/checkout/DDM372908";
-
   const faqs = [
-      { q: "A Life 360 Parceiros é um banco?", a: "Não. A Life 360 Parceiros oferece estrutura, plataforma e suporte. As operações seguem regras aplicáveis das instituições e parceiros." },
-      { q: "O Diagnóstico CreditIA é obrigatório?", a: "Sim. Ele faz parte do processo e sem ele a análise não avança." },
-      { q: "Eu posso vender com minha marca?", a: "Sim, no plano Business White Label." },
-      { q: "Preciso ter experiência?", a: "Não necessariamente. Você pode começar do zero desde que siga o processo e use suporte e treinamento." },
+      { q: "A Life 360 Parceiros vende crédito?", a: "Não. A Life 360 Parceiros é uma plataforma e um ecossistema para parceiros que atuam com reabilitação de crédito e querem estrutura, processos e suporte para operar melhor." },
+      { q: "O que eu adquiro ao entrar?", a: "Você adquire acesso à plataforma e ao ecossistema Life 360 Parceiros conforme o plano escolhido, incluindo processos, listas, suporte e materiais disponíveis." },
+      { q: "Preciso ter experiência?", a: "Não necessariamente. Você consegue começar com onboarding e com processos prontos, seguindo o padrão da plataforma." },
+      { q: "Isso serve para quem atende pouco ou muito volume?", a: "Serve para os dois. Quem atende pouco ganha padrão e velocidade. Quem atende muito ganha controle e escala sem bagunça." },
+      { q: "Como funciona o suporte?", a: "Você tem canais de suporte e orientação operacional para dúvidas e para organizar seu fluxo de trabalho." },
+      { q: "Meus dados ficam seguros?", a: "Sim. Os dados devem ser tratados com sigilo e conforme a LGPD seguindo políticas e boas práticas aplicáveis." },
   ];
 
   return (
-    <section id="faq" className="py-16 md:py-24 px-6 bg-neutral-900 relative">
+    <section id="faq" className="py-20 md:py-28 px-6 bg-[#050505] relative">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-2xl md:text-5xl font-bold text-white mb-8 md:mb-12 text-center">
           Dúvidas frequentes
         </h2>
         
-        <div className="bg-black/50 rounded-2xl border border-white/5 p-6 md:p-8">
+        <div className="bg-[#101010] rounded-2xl border border-white/5 p-6 md:p-8">
             {faqs.map((faq, i) => <FAQItem key={i} question={faq.q} answer={faq.a} />)}
-        </div>
-
-        <div className="mt-12 md:mt-16 text-center">
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Pare de perder venda no “não aprovado” e opere com uma esteira completa</h3>
-            <p className="text-gray-400 mb-8 text-sm md:text-base">Se você quer mais controle, mais consistência e mais receita por atendimento, a Life 360 Parceiros coloca método e estrutura na sua operação.</p>
-            
-            <div className="flex flex-col md:flex-row gap-4 justify-center">
-                <a href={linkEmpreendedor} target="_blank" rel="noopener noreferrer" className="btn-luxury px-8 py-3 md:px-10 md:py-4 rounded-full font-bold inline-block w-full md:w-auto text-sm md:text-base">
-                    <div className="btn-border-container"><div className="btn-border-anim"></div></div>
-                    <span className="relative z-10">Começar no Empreendedor</span>
-                    <div className="btn-luxury-shine"></div>
-                </a>
-                <a href={linkBusiness} target="_blank" rel="noopener noreferrer" className="px-8 py-3 md:px-10 md:py-4 rounded-full font-bold inline-block w-full md:w-auto text-sm md:text-base border border-white/20 hover:border-brand-gold hover:text-brand-gold transition-all">
-                    Quero o Business White Label
-                </a>
-            </div>
         </div>
       </div>
     </section>

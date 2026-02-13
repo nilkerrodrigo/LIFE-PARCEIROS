@@ -1,158 +1,51 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const images = [
-  "https://life360parceiros.com.br/wp-content/uploads/2026/02/1.png",
-  "https://life360parceiros.com.br/wp-content/uploads/2026/02/2.png",
-  "https://life360parceiros.com.br/wp-content/uploads/2026/02/3.png",
-  "https://life360parceiros.com.br/wp-content/uploads/2026/02/4.png",
-  "https://life360parceiros.com.br/wp-content/uploads/2026/02/5.png",
-  "https://life360parceiros.com.br/wp-content/uploads/2026/02/6.png",
-  "https://life360parceiros.com.br/wp-content/uploads/2026/02/7.png",
-  "https://life360parceiros.com.br/wp-content/uploads/2026/02/8.png",
-  "https://life360parceiros.com.br/wp-content/uploads/2026/02/9.png",
-  "https://life360parceiros.com.br/wp-content/uploads/2026/02/10.png",
-  "https://life360parceiros.com.br/wp-content/uploads/2026/02/11.png",
-  "https://life360parceiros.com.br/wp-content/uploads/2026/02/12.png",
-  "https://life360parceiros.com.br/wp-content/uploads/2026/02/13.png"
+    "http://life360parceiros.com.br/wp-content/uploads/2026/02/1.png",
+    "http://life360parceiros.com.br/wp-content/uploads/2026/02/2.png",
+    "http://life360parceiros.com.br/wp-content/uploads/2026/02/3.png",
+    "http://life360parceiros.com.br/wp-content/uploads/2026/02/4.png",
+    "http://life360parceiros.com.br/wp-content/uploads/2026/02/5.png",
+    "http://life360parceiros.com.br/wp-content/uploads/2026/02/6.png",
+    "http://life360parceiros.com.br/wp-content/uploads/2026/02/7.png",
+    "http://life360parceiros.com.br/wp-content/uploads/2026/02/8.png",
+    "http://life360parceiros.com.br/wp-content/uploads/2026/02/9.png",
+    "http://life360parceiros.com.br/wp-content/uploads/2026/02/10.png",
+    "http://life360parceiros.com.br/wp-content/uploads/2026/02/11.png",
+    "http://life360parceiros.com.br/wp-content/uploads/2026/02/12.png"
 ];
 
 const PlatformPreview: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-      scale: 0.95
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-      scale: 1
-    },
-    exit: (direction: number) => ({
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-      scale: 0.95
-    })
-  };
-
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity;
-  };
-
-  const paginate = useCallback((newDirection: number) => {
-    setDirection(newDirection);
-    setCurrentIndex((prevIndex) => {
-      let nextIndex = prevIndex + newDirection;
-      if (nextIndex < 0) nextIndex = images.length - 1;
-      if (nextIndex >= images.length) nextIndex = 0;
-      return nextIndex;
-    });
-  }, []);
-
-  useEffect(() => {
-    if (isPaused) return;
-
-    const timer = setInterval(() => {
-      paginate(1);
-    }, 4000);
-
-    return () => clearInterval(timer);
-  }, [paginate, isPaused]);
-
   return (
-    <section className="py-10 md:py-24 px-6 bg-[#080808] border-t border-white/5 relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-brand-gold/5 blur-[120px] rounded-full pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-8 md:mb-16">
-          <span className="text-brand-gold font-medium uppercase tracking-widest text-xs md:text-sm">POR DENTRO DA ÁREA DOS PARCEIROS</span>
-          <h2 className="mt-3 md:mt-4 text-2xl md:text-5xl font-bold text-white">
-            Conheça a nossa plataforma por dentro
-          </h2>
+    <section className="py-20 bg-black relative border-t border-white/5 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
+            <span className="text-brand-gold text-xs font-bold uppercase tracking-widest">Por dentro da área dos parceiros</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mt-3">Conheça a nossa plataforma por dentro</h2>
         </div>
 
-        {/* Carousel Container */}
-        <div 
-          className="relative w-full max-w-5xl mx-auto aspect-video bg-[#151515] rounded-xl border border-white/10 shadow-2xl overflow-hidden group"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          
-          <AnimatePresence initial={false} custom={direction}>
-            <motion.img
-              key={currentIndex}
-              src={images[currentIndex]}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 }
-              }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={1}
-              onDragEnd={(e, { offset, velocity }) => {
-                const swipe = swipePower(offset.x, velocity.x);
-                if (swipe < -swipeConfidenceThreshold) {
-                  paginate(1);
-                } else if (swipe > swipeConfidenceThreshold) {
-                  paginate(-1);
-                }
-              }}
-              className="absolute w-full h-full object-contain p-2 md:p-4 bg-black/50"
-              alt={`Platform Screenshot ${currentIndex + 1}`}
-            />
-          </AnimatePresence>
+        <div className="relative w-full overflow-hidden">
+             {/* Gradient Overlays for smooth edges */}
+            <div className="absolute left-0 top-0 w-10 md:w-32 h-full bg-gradient-to-r from-black to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 w-10 md:w-32 h-full bg-gradient-to-l from-black to-transparent z-10"></div>
 
-          {/* Navigation Buttons */}
-          <div className="absolute inset-0 flex items-center justify-between p-4 pointer-events-none">
-            <button 
-              className="pointer-events-auto p-2 md:p-3 rounded-full bg-black/50 border border-white/10 text-white hover:bg-brand-gold hover:text-black hover:border-brand-gold transition-all backdrop-blur-sm"
-              onClick={() => paginate(-1)}
+            <motion.div 
+                className="flex gap-4 md:gap-8 w-max"
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{ 
+                    repeat: Infinity, 
+                    ease: "linear", 
+                    duration: 60
+                }}
             >
-              <ChevronLeft size={24} />
-            </button>
-            <button 
-              className="pointer-events-auto p-2 md:p-3 rounded-full bg-black/50 border border-white/10 text-white hover:bg-brand-gold hover:text-black hover:border-brand-gold transition-all backdrop-blur-sm"
-              onClick={() => paginate(1)}
-            >
-              <ChevronRight size={24} />
-            </button>
-          </div>
-
-          {/* Progress Bar & Counter */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
-            <div className="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-xs font-mono text-gray-300">
-              {currentIndex + 1} / {images.length}
-            </div>
-            <div className="flex gap-1.5">
-              {images.map((_, idx) => (
-                <div 
-                  key={idx}
-                  className={`h-1 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-6 bg-brand-gold' : 'w-1.5 bg-white/20'}`}
-                />
-              ))}
-            </div>
-          </div>
+                {/* Double the list for seamless loop - rendering it twice ensures smooth transition */}
+                {[...images, ...images].map((src, index) => (
+                    <div key={index} className="w-[280px] md:w-[600px] rounded-xl overflow-hidden border border-white/10 shadow-lg shrink-0 bg-[#101010]">
+                        <img src={src} alt={`Platform Screenshot ${index}`} className="w-full h-auto object-cover" />
+                    </div>
+                ))}
+            </motion.div>
         </div>
-
-        <div className="mt-8 text-center">
-            <p className="text-gray-400 text-sm">Arraste para o lado ou use as setas para navegar</p>
-        </div>
-      </div>
     </section>
   );
 };
