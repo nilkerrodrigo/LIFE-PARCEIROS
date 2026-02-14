@@ -10,19 +10,19 @@ const Footer: React.FC = () => {
   return (
     <>
       <footer className="bg-black border-t border-white/5 pt-16 pb-12 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 text-center md:text-left">
           
           {/* Brand */}
           <div className="space-y-6">
             <img 
               src="https://life360parceiros.com.br/wp-content/uploads/2026/02/versao-1-dourada.png" 
               alt="Life 360" 
-              className="h-8 opacity-90"
+              className="h-8 opacity-90 mx-auto md:mx-0"
             />
             <p className="text-gray-500 text-xs leading-relaxed">
               Estrutura completa para profissionais de crédito.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-3 justify-center md:justify-start">
                 <a href="#" className="w-8 h-8 rounded-full bg-[#151515] flex items-center justify-center text-gray-400 hover:text-brand-gold hover:bg-[#202020] transition-all">
                     <Instagram size={14} />
                 </a>
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
           {/* Legal Notices */}
           <div className="md:col-span-2">
              <h4 className="text-white font-bold text-sm mb-4">Avisos Legais</h4>
-             <div className="space-y-3 text-[11px] text-gray-500 leading-relaxed max-w-md">
+             <div className="space-y-3 text-[11px] text-gray-500 leading-relaxed max-w-md mx-auto md:mx-0">
                 <p>Não somos instituição financeira. Operações realizadas por parceiros autorizados.</p>
                 <p>LGPD dados tratados com sigilo.</p>
              </div>
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto border-t border-white/5 pt-8">
+        <div className="max-w-7xl mx-auto border-t border-white/5 pt-8 text-center md:text-left">
             <p className="text-[10px] text-gray-700">© 2026 Life 360 Parceiros. Todos os direitos reservados.</p>
         </div>
       </footer>

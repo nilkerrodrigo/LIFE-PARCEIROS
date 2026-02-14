@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-28 px-6 min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section id="hero" className="relative pt-32 pb-12 md:pt-40 md:pb-28 px-6 flex flex-col items-center justify-center overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#1a1a1a] via-[#050505] to-black -z-10" />
 

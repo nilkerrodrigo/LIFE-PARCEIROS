@@ -4,11 +4,11 @@ import { CheckCircle2, ArrowRight } from 'lucide-react';
 
 const Expert: React.FC = () => {
   return (
-    <section className="py-20 md:py-28 px-6 bg-[#050505] relative overflow-hidden">
+    <section className="py-10 md:py-24 px-6 bg-[#050505] relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/3 h-full bg-brand-gold/5 blur-[150px] -z-10" />
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-20">
         
         {/* Visual Representation (Video) */}
         <motion.div 
@@ -33,7 +33,7 @@ const Expert: React.FC = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full md:w-1/2 space-y-6 md:space-y-8 order-1 md:order-2"
+            className="w-full md:w-1/2 space-y-6 md:space-y-8 order-1 md:order-2 text-center md:text-left"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
             Sua operação de reabilitação de crédito em um só lugar, com <span className="text-brand-gold">método e estrutura.</span>
@@ -51,24 +51,26 @@ const Expert: React.FC = () => {
               </p>
           </div>
 
-          <ul className="space-y-3">
-            {[
-                "Plataforma para organizar e acompanhar atendimentos",
-                "Processos prontos para execução rápida e padronizada",
-                "Suporte operacional para destravar a rotina",
-                "Materiais e treinamentos para evoluir performance",
-                "Esteira de soluções para aumentar ticket e oportunidades"
-            ].map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                    <div className="mt-1 w-5 h-5 rounded-full border border-brand-gold/30 flex items-center justify-center shrink-0">
-                        <div className="w-2.5 h-2.5 rounded-full bg-brand-gold"></div>
-                    </div>
-                    <span className="text-gray-300 text-sm">{item}</span>
-                </li>
-            ))}
-          </ul>
+          <div className="flex justify-center md:justify-start">
+            <ul className="space-y-3 text-left inline-block">
+                {[
+                    "Plataforma para organizar e acompanhar atendimentos",
+                    "Processos prontos para execução rápida e padronizada",
+                    "Suporte operacional para destravar a rotina",
+                    "Materiais e treinamentos para evoluir performance",
+                    "Esteira de soluções para aumentar ticket e oportunidades"
+                ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                        <div className="mt-1 w-5 h-5 rounded-full border border-brand-gold/30 flex items-center justify-center shrink-0">
+                            <div className="w-2.5 h-2.5 rounded-full bg-brand-gold"></div>
+                        </div>
+                        <span className="text-gray-300 text-sm">{item}</span>
+                    </li>
+                ))}
+            </ul>
+          </div>
 
-          <div className="pt-4">
+          <div className="pt-4 flex justify-center md:justify-start">
             <a href="#plans" className="btn-luxury px-8 py-4 rounded-full text-xs md:text-sm font-bold inline-block">
                 <div className="btn-border-container"><div className="btn-border-anim"></div></div>
                 <span className="relative z-10">QUERO VER COMO FUNCIONA POR DENTRO</span>
